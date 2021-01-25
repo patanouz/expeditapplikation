@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpeditApplikation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,7 +7,7 @@ using System.Windows.Forms;
 
 namespace PresentatationLayerExpApp
 {
-    static class Program
+    class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -17,6 +18,21 @@ namespace PresentatationLayerExpApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+            new Program().MainMenu();
         }
+
+        private Program()
+        {
+            bookingSystem = new BookingSystem();
+        }
+
+        private void MainMenu()
+        {
+            Console.WriteLine("Booking System!" + "\n" + "Welcome!");
+        }
+
+        private BookingSystem bookingSystem;
     }
 }
+

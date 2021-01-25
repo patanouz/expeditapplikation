@@ -37,37 +37,39 @@ namespace PresentatationLayerExpApp
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.förstaToolStripMenuItem,
             this.andraToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1045, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // förstaToolStripMenuItem
             // 
             this.förstaToolStripMenuItem.Name = "förstaToolStripMenuItem";
-            this.förstaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.förstaToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.förstaToolStripMenuItem.Text = "Första";
             this.förstaToolStripMenuItem.Click += new System.EventHandler(this.förstaToolStripMenuItem_Click);
             // 
             // andraToolStripMenuItem
             // 
             this.andraToolStripMenuItem.Name = "andraToolStripMenuItem";
-            this.andraToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.andraToolStripMenuItem.Size = new System.Drawing.Size(63, 24);
             this.andraToolStripMenuItem.Text = "Andra";
             this.andraToolStripMenuItem.Click += new System.EventHandler(this.andraToolStripMenuItem_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1045, 690);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
