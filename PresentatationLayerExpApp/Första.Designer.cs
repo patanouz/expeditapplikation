@@ -107,6 +107,7 @@ namespace PresentatationLayerExpApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(784, 537);
             this.Controls.Add(this.LabelRubrik);
             this.Controls.Add(this.LabelMedlemNr);
