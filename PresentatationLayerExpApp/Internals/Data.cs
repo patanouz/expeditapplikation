@@ -9,6 +9,11 @@ namespace ExpeditApplikation.Internals
     /// </summary>
     internal class Data
     {
+
+        public Repository<Member> MemberRepository
+        {
+            get; private set;
+        }
         public Repository<User> UserRepository {
             get; private set;
         }
@@ -25,6 +30,7 @@ namespace ExpeditApplikation.Internals
 
         internal Data()
         {
+            MemberRepository = new Repository<Member>();
             UserRepository = new Repository<User>();
             BookRepository = new Repository<Book>();
             BookingRepository = new Repository<Booking>();
@@ -38,6 +44,7 @@ namespace ExpeditApplikation.Internals
         private void Fill()
         {
             //Members
+
             // UserRepository.Table.Add(new Member(1, "");
 
             //Book
