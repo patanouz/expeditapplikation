@@ -22,3 +22,15 @@ C:\Users\simon\Desktop\Expeditapplikation\PresentatationLayerExpApp\obj\Debug\Pr
 C:\Users\simon\Desktop\Expeditapplikation\PresentatationLayerExpApp\bin\Debug\PresentatationLayerExpApp.exe.config
 C:\Users\simon\Desktop\Expeditapplikation\PresentatationLayerExpApp\bin\Debug\PresentatationLayerExpApp.exe
 C:\Users\simon\Desktop\Expeditapplikation\PresentatationLayerExpApp\bin\Debug\PresentatationLayerExpApp.pdb
+C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\bin\Debug\PresentatationLayerExpApp.exe.config
+C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\bin\Debug\PresentatationLayerExpApp.exe
+C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\bin\Debug\PresentatationLayerExpApp.pdb
+C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.csprojAssemblyReference.cache
+C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.Andra.resources
+C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.Form1.resources
+C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.Properties.Resources.resources
+C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.Första.resources
+C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.csproj.GenerateResource.cache
+C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.csproj.CoreCompileInputs.cache
+C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.exe
+C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.pdb
