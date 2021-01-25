@@ -1,0 +1,12 @@
+C:\Users\norep\source\repos\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\bin\Debug\PresentatationLayerExpApp.exe.config
+C:\Users\norep\source\repos\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\bin\Debug\PresentatationLayerExpApp.exe
+C:\Users\norep\source\repos\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\bin\Debug\PresentatationLayerExpApp.pdb
+C:\Users\norep\source\repos\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.csprojAssemblyReference.cache
+C:\Users\norep\source\repos\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.Form1.resources
+C:\Users\norep\source\repos\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.Properties.Resources.resources
+C:\Users\norep\source\repos\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.csproj.GenerateResource.cache
+C:\Users\norep\source\repos\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.csproj.CoreCompileInputs.cache
+C:\Users\norep\source\repos\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.exe
+C:\Users\norep\source\repos\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.pdb
+C:\Users\norep\source\repos\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.Andra.resources
+C:\Users\norep\source\repos\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.Första.resources
