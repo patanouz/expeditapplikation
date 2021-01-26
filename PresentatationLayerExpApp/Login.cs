@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ExpeditApplikation;
 
 namespace PresentatationLayerExpApp
 {
@@ -15,32 +16,37 @@ namespace PresentatationLayerExpApp
 
         private string username = "Admin";
         private string password = "hunter2";
+        BookingSystem bs;
+
 
         public Login()
         {
+            bs = new BookingSystem();
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text.ToLower().Equals(username.ToLower()) && textBox2.Text.Equals(password))
-            {
+            //if (bs.LogIn(int.Parse(textBox1.Text), textBox2.Text)) 
+            //{
                 Form1 f = new Form1();
                 f.Show();
                 this.Hide();
+            //}
+            //else
+            //{
+                
+            //}
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
             }
         }
-
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-           
-        }
-
-        private void textBox2_KeyDown(object sender, KeyEventArgs e)
-        {
-          
-        }
-
-       
     }
 }
