@@ -44,6 +44,8 @@ namespace PresentatationLayerExpApp
 
         }
 
+        
+
         protected override void OnLoad(EventArgs e)
         {
             var mdiclient = this.Controls.OfType<MdiClient>().Single();
@@ -83,6 +85,11 @@ namespace PresentatationLayerExpApp
             Reset();
             andra.Show();
             andra.Location = p;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
