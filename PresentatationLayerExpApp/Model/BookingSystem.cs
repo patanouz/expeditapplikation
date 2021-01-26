@@ -24,9 +24,9 @@ namespace ExpeditApplikation
         {
             data = new Data();
             // Stupid solution. Not completely after the DSD where Get(id) is a Repository method.
-            foreach (User m in data.UserRepository.Table) {
-                if (m.UserID == userId && m.VerifyPassword(password)) {
-                    LoggedIn = m;
+            foreach (User user in data.UserRepository.Table) {
+                if (user.UserID == userId && user.VerifyPassword(password)) {
+                    LoggedIn = user;
                     return true;
                 }
             }

@@ -11,7 +11,7 @@ namespace ExpeditApplikation.Model
             get; private set;
         }
 
-        public string UserName
+        public string Name
         {
             get; private set;
         }
@@ -20,7 +20,7 @@ namespace ExpeditApplikation.Model
         {
             UserID = id;
             this.password = password;
-            UserName = name;
+            Name = name;
         }
 
         internal bool VerifyPassword(string inputpassword)
