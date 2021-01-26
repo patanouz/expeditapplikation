@@ -32,6 +32,13 @@ namespace ExpeditApplikation.Model
         {
             get; private set;
         }
-
+        internal Member(int id, string firstname, string lastname, string tele, string email)
+        {
+            MemberID = id;
+            FirstName = firstname;
+            LastName = lastname;
+            TeleNo = tele;
+            Email = email;
+        }
     }
 }

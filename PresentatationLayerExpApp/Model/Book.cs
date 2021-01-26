@@ -6,12 +6,17 @@ namespace ExpeditApplikation.Model
 {
     public class Book
     {
-        public int ISBN {
+        public long ISBN {
             get; private set;
         }
 
         public string Title{
             get; private set;
+        }
+
+        internal Book(long isbn, string title){
+            ISBN = isbn;
+            Title = title;
         }
     }
 }

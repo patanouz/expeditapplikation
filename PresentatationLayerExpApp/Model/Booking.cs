@@ -6,7 +6,7 @@ namespace ExpeditApplikation.Model
 {
     public class Booking
     {
-        public long BookingReference
+        public int BookingReference
         {
             get; private set;
         }
@@ -32,6 +32,16 @@ namespace ExpeditApplikation.Model
         public DateTime ExpiryDate
         {
             get; private set;
+        }
+
+        internal Booking(int bookingRef, int userId, int memberId, int isbn, DateTime startDate, DateTime expiryDate)
+        {
+            BookingReference = bookingRef;
+            EmployeeID = userId;
+            MemberID = memberId;
+            ISBN = isbn;
+            Date = startDate;
+            ExpiryDate = expiryDate;
         }
     }
 }

@@ -43,14 +43,14 @@ namespace ExpeditApplikation.Internals
 
         private void Fill()
         {
-            //Members
+            //User
+            UserRepository.Table.Add(new User(1, "123", "Simon"));
 
-            // UserRepository.Table.Add(new Member(1, "");
+            //Member
+            MemberRepository.Table.Add(new Member(1, "Simon", "Landenberg", "070-1234567", "s193508@student.hb.se"));
 
             //Book
-
-            //Booking
-
+            BookRepository.Table.Add(new Book(123123123, "Test"));
         }
     }
 }
