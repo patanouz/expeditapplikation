@@ -23,7 +23,7 @@ namespace PresentatationLayerExpApp
         private void Andra_Load(object sender, EventArgs e)
         {
             BookingSystem bs = new BookingSystem();
-            dataGridViewÅterlämnade.DataSource = bs.AvailableBooks();
+            dataGridViewÅterlämnade.DataSource = bs.ExistingBookings();
         }
     }
 }

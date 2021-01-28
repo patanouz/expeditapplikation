@@ -18,6 +18,11 @@ namespace ExpeditApplikation
             get; private set;
         }
 
+        public BookingSystem()
+        {
+            data = new Data();
+        }
+
         public static BookingSystem GetBs()
         {
             if(bs == null)
@@ -35,7 +40,6 @@ namespace ExpeditApplikation
         /// <returns></returns>
         public string LogIn(string userId, string password)
         {
-            data = new Data();
             // Stupid solution. Not completely after the DSD where Get(id) is a Repository method.
             foreach (User user in data.UserRepository.Table) {
                 if (user.UserID == userId && user.VerifyPassword(password)) {
@@ -57,6 +61,16 @@ namespace ExpeditApplikation
 
             }
             return availableBooks;
+        }
+
+        public IList<Booking> ExistingBookings()
+        {
+            List<Booking> bookings = new List<Booking>();
+            foreach (Booking booking in data.BookingRepository.Table)
+            {
+                bookings.Add(booking);
+            }
+            return bookings;
         }
 
         private Internals.Data data;
