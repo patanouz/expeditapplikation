@@ -1,4 +1,5 @@
 ﻿using ExpeditApplikation;
+using ExpeditApplikation.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,23 +14,16 @@ namespace PresentatationLayerExpApp
 {
     public partial class Första : Form
     {
+        BookingSystem bookingSystem { get; set; }
         public Första()
         {
             InitializeComponent();
-            LoadBookList();
         }
 
         private void Test_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void LoadBookList()
-        {
             BookingSystem bs = new BookingSystem();
             dataGridViewBöcker.DataSource = bs.AvailableBooks();
-
         }
-
     }
 }

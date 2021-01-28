@@ -46,9 +46,10 @@ namespace PresentatationLayerExpApp
             this.bokaButton.FlatAppearance.BorderSize = 0;
             this.bokaButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
             this.bokaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bokaButton.Location = new System.Drawing.Point(266, 187);
+            this.bokaButton.Location = new System.Drawing.Point(355, 230);
+            this.bokaButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bokaButton.Name = "bokaButton";
-            this.bokaButton.Size = new System.Drawing.Size(96, 33);
+            this.bokaButton.Size = new System.Drawing.Size(128, 41);
             this.bokaButton.TabIndex = 0;
             this.bokaButton.Text = "Boka";
             this.bokaButton.UseVisualStyleBackColor = false;
@@ -56,40 +57,46 @@ namespace PresentatationLayerExpApp
             // dataGridViewBöcker
             // 
             this.dataGridViewBöcker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBöcker.Location = new System.Drawing.Point(387, 73);
+            this.dataGridViewBöcker.Location = new System.Drawing.Point(516, 90);
+            this.dataGridViewBöcker.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewBöcker.Name = "dataGridViewBöcker";
-            this.dataGridViewBöcker.Size = new System.Drawing.Size(285, 345);
+            this.dataGridViewBöcker.RowHeadersWidth = 51;
+            this.dataGridViewBöcker.Size = new System.Drawing.Size(380, 425);
             this.dataGridViewBöcker.TabIndex = 1;
             // 
             // ISBNTextBox
             // 
-            this.ISBNTextBox.Location = new System.Drawing.Point(266, 126);
+            this.ISBNTextBox.Location = new System.Drawing.Point(355, 155);
+            this.ISBNTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ISBNTextBox.Name = "ISBNTextBox";
-            this.ISBNTextBox.Size = new System.Drawing.Size(96, 20);
+            this.ISBNTextBox.Size = new System.Drawing.Size(127, 22);
             this.ISBNTextBox.TabIndex = 2;
             // 
             // MedlemNrTextBox
             // 
-            this.MedlemNrTextBox.Location = new System.Drawing.Point(266, 73);
+            this.MedlemNrTextBox.Location = new System.Drawing.Point(355, 90);
+            this.MedlemNrTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MedlemNrTextBox.Name = "MedlemNrTextBox";
-            this.MedlemNrTextBox.Size = new System.Drawing.Size(96, 20);
+            this.MedlemNrTextBox.Size = new System.Drawing.Size(127, 22);
             this.MedlemNrTextBox.TabIndex = 3;
             // 
             // ISBNLabel
             // 
             this.ISBNLabel.AutoSize = true;
-            this.ISBNLabel.Location = new System.Drawing.Point(168, 76);
+            this.ISBNLabel.Location = new System.Drawing.Point(224, 94);
+            this.ISBNLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ISBNLabel.Name = "ISBNLabel";
-            this.ISBNLabel.Size = new System.Drawing.Size(38, 13);
+            this.ISBNLabel.Size = new System.Drawing.Size(47, 17);
             this.ISBNLabel.TabIndex = 4;
             this.ISBNLabel.Text = "ISBN: ";
             // 
             // LabelMedlemNr
             // 
             this.LabelMedlemNr.AutoSize = true;
-            this.LabelMedlemNr.Location = new System.Drawing.Point(168, 129);
+            this.LabelMedlemNr.Location = new System.Drawing.Point(224, 159);
+            this.LabelMedlemNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelMedlemNr.Name = "LabelMedlemNr";
-            this.LabelMedlemNr.Size = new System.Drawing.Size(92, 13);
+            this.LabelMedlemNr.Size = new System.Drawing.Size(123, 17);
             this.LabelMedlemNr.TabIndex = 5;
             this.LabelMedlemNr.Text = "Medlemsnummer: ";
             // 
@@ -97,18 +104,19 @@ namespace PresentatationLayerExpApp
             // 
             this.LabelRubrik.AutoSize = true;
             this.LabelRubrik.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelRubrik.Location = new System.Drawing.Point(12, 9);
+            this.LabelRubrik.Location = new System.Drawing.Point(16, 11);
+            this.LabelRubrik.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelRubrik.Name = "LabelRubrik";
-            this.LabelRubrik.Size = new System.Drawing.Size(194, 26);
+            this.LabelRubrik.Size = new System.Drawing.Size(242, 31);
             this.LabelRubrik.TabIndex = 6;
             this.LabelRubrik.Text = "Registrera bokning";
             // 
             // Första
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(784, 537);
+            this.ClientSize = new System.Drawing.Size(1045, 661);
             this.Controls.Add(this.LabelRubrik);
             this.Controls.Add(this.LabelMedlemNr);
             this.Controls.Add(this.ISBNLabel);
@@ -117,6 +125,7 @@ namespace PresentatationLayerExpApp
             this.Controls.Add(this.dataGridViewBöcker);
             this.Controls.Add(this.bokaButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Första";
             this.Text = "       ";
             this.Load += new System.EventHandler(this.Test_Load);
