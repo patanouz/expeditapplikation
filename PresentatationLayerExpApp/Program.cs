@@ -9,7 +9,7 @@ namespace PresentatationLayerExpApp
 {
     class Program
     {
-        public static BookingSystem bookingSystem = new BookingSystem();
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -18,7 +18,7 @@ namespace PresentatationLayerExpApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login(bookingSystem));
+            Application.Run(new Login());
         }
     }
 }

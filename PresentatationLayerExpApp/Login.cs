@@ -15,7 +15,7 @@ namespace PresentatationLayerExpApp
     {
         BookingSystem bookingSystem;
 
-        public Login(BookingSystem system)
+        public Login()
         {
             InitializeComponent();
             bookingSystem = BookingSystem.GetBs();
