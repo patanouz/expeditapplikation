@@ -34,6 +34,19 @@ namespace ExpeditApplikation
             return "false";
         }
 
+        public IList<Book> AvailableBooks()
+        {
+            data = new Data();
+            List<Book> availableBooks = new List<Book>();
+            foreach (Book book in data.BookRepository.Table)
+            {
+                if (book.Available == true)
+                    availableBooks.Add(book);
+
+            }
+            return availableBooks;
+        }
+
         public List<Book> GetAvailableBooks()
         {
             var books = new List<Book>();
