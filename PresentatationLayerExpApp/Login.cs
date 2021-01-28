@@ -13,12 +13,12 @@ namespace PresentatationLayerExpApp
 {
     public partial class Login : Form
     {
-        BookingSystem bookingSystem { get; set; }
+        BookingSystem bookingSystem;
 
         public Login(BookingSystem system)
         {
             InitializeComponent();
-            bookingSystem = system;
+            bookingSystem = BookingSystem.GetBs();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,6 +50,11 @@ namespace PresentatationLayerExpApp
             {
                 e.Handled = true;
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

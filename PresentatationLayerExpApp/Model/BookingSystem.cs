@@ -11,8 +11,20 @@ namespace ExpeditApplikation
     /// </summary>
     public class BookingSystem
     {
+
+        private static BookingSystem bs;
+
         public User LoggedIn {
             get; private set;
+        }
+
+        public static BookingSystem GetBs()
+        {
+            if(bs == null)
+            {
+                bs = new BookingSystem();
+            }
+            return bs;
         }
 
         /// <summary>
