@@ -37,7 +37,8 @@ namespace PresentatationLayerExpApp
             }
             else
             {
-
+                label2.ForeColor = Color.Red;
+                label2.Text = "AnställningsNr eller Lösenord är felaktigt.";
             }
         }
 
