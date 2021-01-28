@@ -34,6 +34,25 @@ namespace ExpeditApplikation
             return "false";
         }
 
+        public BookingSystem()
+        {
+            data = new Data();
+        }
+
+        public IList<Book> AvailableBooks()
+        {
+
+            List<Book> availableBooks = new List<Book>();
+            foreach (Book book in data.BookRepository.Table)
+            {
+                if (book.Available == true)
+                    availableBooks.Add(book);
+
+            }
+            return availableBooks;
+
+
+        }
         public List<Book> GetAvailableBooks()
         {
             var books = new List<Book>();

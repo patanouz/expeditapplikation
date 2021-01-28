@@ -36,7 +36,7 @@ namespace ExpeditApplikation.Internals
             BookingRepository = new Repository<Booking>();
 
             // Initialize the tables if this is the first UnitOfWork.
-            if (UserRepository.Table.Count == 0) {
+            if (BookRepository.Table.Count == 0) {
                 Fill();
             }
         }
