@@ -35,3 +35,4 @@ C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayer
 C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.exe
 C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.pdb
 C:\Users\Micke\Desktop\expeditapplikation\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.Login.resources
+C:\Users\simon\Desktop\Expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.Login.resources

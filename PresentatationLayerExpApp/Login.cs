@@ -13,30 +13,32 @@ namespace PresentatationLayerExpApp
 {
     public partial class Login : Form
     {
+        BookingSystem bookingSystem { get; set; }
 
-        private string username = "Admin";
-        private string password = "hunter2";
-        BookingSystem bs;
-
-
-        public Login()
+        public Login(BookingSystem system)
         {
-            bs = new BookingSystem();
             InitializeComponent();
+            bookingSystem = system;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //if (bs.LogIn(int.Parse(textBox1.Text), textBox2.Text)) 
-            //{
-                Form1 f = new Form1();
+            if (bookingSystem.LogIn(textBox1.Text, textBox2.Text) == "admin")
+            {
+                Form1 f = new Form1(bookingSystem);
                 f.Show();
                 this.Hide();
-            //}
-            //else
-            //{
-                
-            //}
+            }
+            else if (bookingSystem.LogIn(textBox1.Text, textBox2.Text) == "supervisor")
+            {
+                Form1 f = new Form1(bookingSystem);
+                f.Show();
+                this.Hide();
+            }
+            else
+            {
+
+            }
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)

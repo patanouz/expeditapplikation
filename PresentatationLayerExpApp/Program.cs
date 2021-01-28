@@ -9,6 +9,7 @@ namespace PresentatationLayerExpApp
 {
     class Program
     {
+        public static BookingSystem bookingSystem = new BookingSystem();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -17,50 +18,8 @@ namespace PresentatationLayerExpApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
-
-            new Program().MainMenu();
+            Application.Run(new Login(bookingSystem));
         }
-
-        private Program()
-        {
-            bookingSystem = new BookingSystem();
-        }
-
-        private void MainMenu()
-        {
-            Console.WriteLine("Welcome to the Booking System!");
-
-            while (true)
-            {
-                if (LogIn())
-                {
-                    Console.WriteLine("You are now logged in {0}.", bookingSystem.LoggedIn.Name);
-                    MainMenu();
-                }
-                else
-                {
-                    Console.WriteLine("Failed to log in.");
-                }
-            }
-        }
-
-        private bool LogIn()
-        {
-            string idToParse = "";
-            int id;
-            while (!int.TryParse(idToParse, out id))
-            {
-                Console.WriteLine("Write your User ID: ");
-                idToParse = Console.ReadLine();
-            }
-            Console.WriteLine("Write your password: ");
-            string password = Console.ReadLine();
-
-            return bookingSystem.LogIn(id, password);
-        }
-
-        private BookingSystem bookingSystem;
     }
 }
 

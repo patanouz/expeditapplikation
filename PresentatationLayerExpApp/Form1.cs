@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExpeditApplikation;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace PresentatationLayerExpApp
 {
     public partial class Form1 : Form
     {
+        BookingSystem bookingSystem { get; set; }
 
         Första första;
         Andra andra;
@@ -20,13 +22,15 @@ namespace PresentatationLayerExpApp
 
         Point p = new Point(0, 0);
 
-        public Form1()
+        public Form1(BookingSystem system)
         {
             InitializeComponent();
+
+            bookingSystem = system;
             allaForms = new Form[2];
 
             första = new Första();
-            andra = new Andra();
+            andra = new Andra(bookingSystem);
 
             allaForms[0] = första;
             allaForms[1] = andra;

@@ -14,9 +14,15 @@ namespace ExpeditApplikation.Model
             get; private set;
         }
 
+        public bool Available
+        {
+            get; private set;
+        }
+
         internal Book(long isbn, string title){
             ISBN = isbn;
             Title = title;
+            Available = true;
         }
     }
 }

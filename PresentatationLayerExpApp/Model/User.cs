@@ -6,7 +6,7 @@ namespace ExpeditApplikation.Model
 {
     public class User
     {
-        public int UserID
+        public string UserID
         {
             get; private set;
         }
@@ -15,12 +15,18 @@ namespace ExpeditApplikation.Model
         {
             get; private set;
         }
+        public string Role
+        {
+            get; private set;
+        }
 
-        internal User(int id, string password, string name)
+
+        internal User(string id, string password, string name, string role)
         {
             UserID = id;
             this.password = password;
             Name = name;
+            Role = role;
         }
 
         internal bool VerifyPassword(string inputpassword)

@@ -44,7 +44,7 @@ namespace ExpeditApplikation.Internals
         private void Fill()
         {
             //User
-            UserRepository.Table.Add(new User(1, "123", "Simon"));
+            UserRepository.Table.Add(new User("1", "123", "Simon", "admin"));
 
             //Member
             MemberRepository.Table.Add(new Member(1, "Simon", "Landenberg", "070-1234567", "s193508@student.hb.se"));
