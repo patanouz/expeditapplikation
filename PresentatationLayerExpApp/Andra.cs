@@ -1,4 +1,5 @@
 ﻿using ExpeditApplikation;
+using ExpeditApplikation.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,18 +19,20 @@ namespace PresentatationLayerExpApp
         {
             InitializeComponent();
             bookingSystem = system;
-            var test = bookingSystem.GetAvailableBooks();
-            dataGridViewÅterlämnade.DataSource = test;
         }
         private void Andra_Load(object sender, EventArgs e)
         {
-            var test = bookingSystem.GetAvailableBooks();
-            dataGridViewÅterlämnade.DataSource = test;
-        }
+            var books = bookingSystem.GetAvailableBooks();
+            var table = new DataTable();
 
-        private void dataGridViewÅterlämnade_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            table.Columns.Add("ISBN", typeof(string));
+            table.Columns.Add("Title", typeof(string));
 
+            foreach (Book book in books){
+                table.Rows.Add(book.ISBN, book.Title);
+            }    
+            
+            dataGridViewÅterlämnade.DataSource = table;
         }
     }
 }

@@ -35,8 +35,6 @@ namespace PresentatationLayerExpApp
             this.BokningsNrTextBox = new System.Windows.Forms.TextBox();
             this.ISBNTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewÅterlämnade = new System.Windows.Forms.DataGridView();
-            this.ISBN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.återlämnaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewÅterlämnade)).BeginInit();
             this.SuspendLayout();
@@ -91,30 +89,12 @@ namespace PresentatationLayerExpApp
             // dataGridViewÅterlämnade
             // 
             this.dataGridViewÅterlämnade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewÅterlämnade.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ISBN,
-            this.Title});
             this.dataGridViewÅterlämnade.Location = new System.Drawing.Point(516, 90);
             this.dataGridViewÅterlämnade.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewÅterlämnade.Name = "dataGridViewÅterlämnade";
             this.dataGridViewÅterlämnade.RowHeadersWidth = 51;
-            this.dataGridViewÅterlämnade.Size = new System.Drawing.Size(380, 425);
+            this.dataGridViewÅterlämnade.Size = new System.Drawing.Size(337, 425);
             this.dataGridViewÅterlämnade.TabIndex = 8;
-            this.dataGridViewÅterlämnade.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewÅterlämnade_CellContentClick);
-            // 
-            // ISBN
-            // 
-            this.ISBN.HeaderText = "ISBN";
-            this.ISBN.MinimumWidth = 6;
-            this.ISBN.Name = "ISBN";
-            this.ISBN.Width = 125;
-            // 
-            // Title
-            // 
-            this.Title.HeaderText = "Title";
-            this.Title.MinimumWidth = 6;
-            this.Title.Name = "Title";
-            this.Title.Width = 205;
             // 
             // återlämnaButton
             // 
@@ -164,7 +144,5 @@ namespace PresentatationLayerExpApp
         private System.Windows.Forms.TextBox ISBNTextBox;
         private System.Windows.Forms.DataGridView dataGridViewÅterlämnade;
         private System.Windows.Forms.Button återlämnaButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ISBN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
     }
 }
