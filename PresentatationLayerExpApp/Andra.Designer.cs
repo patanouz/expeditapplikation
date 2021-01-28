@@ -43,57 +43,52 @@ namespace PresentatationLayerExpApp
             // 
             this.LabelRubrikÅterlämna.AutoSize = true;
             this.LabelRubrikÅterlämna.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelRubrikÅterlämna.Location = new System.Drawing.Point(16, 11);
-            this.LabelRubrikÅterlämna.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelRubrikÅterlämna.Location = new System.Drawing.Point(12, 9);
             this.LabelRubrikÅterlämna.Name = "LabelRubrikÅterlämna";
-            this.LabelRubrikÅterlämna.Size = new System.Drawing.Size(188, 31);
+            this.LabelRubrikÅterlämna.Size = new System.Drawing.Size(153, 26);
             this.LabelRubrikÅterlämna.TabIndex = 13;
             this.LabelRubrikÅterlämna.Text = "Återlämna bok";
             // 
             // LabelBokningsNr
             // 
             this.LabelBokningsNr.AutoSize = true;
-            this.LabelBokningsNr.Location = new System.Drawing.Point(224, 158);
-            this.LabelBokningsNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelBokningsNr.Location = new System.Drawing.Point(168, 128);
             this.LabelBokningsNr.Name = "LabelBokningsNr";
-            this.LabelBokningsNr.Size = new System.Drawing.Size(125, 17);
+            this.LabelBokningsNr.Size = new System.Drawing.Size(94, 13);
             this.LabelBokningsNr.TabIndex = 12;
             this.LabelBokningsNr.Text = "Bokningsnummer: ";
             // 
             // ISBNLabelÅterlämna
             // 
             this.ISBNLabelÅterlämna.AutoSize = true;
-            this.ISBNLabelÅterlämna.Location = new System.Drawing.Point(224, 94);
-            this.ISBNLabelÅterlämna.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ISBNLabelÅterlämna.Location = new System.Drawing.Point(168, 76);
             this.ISBNLabelÅterlämna.Name = "ISBNLabelÅterlämna";
-            this.ISBNLabelÅterlämna.Size = new System.Drawing.Size(47, 17);
+            this.ISBNLabelÅterlämna.Size = new System.Drawing.Size(38, 13);
             this.ISBNLabelÅterlämna.TabIndex = 11;
             this.ISBNLabelÅterlämna.Text = "ISBN: ";
             // 
             // BokningsNrTextBox
             // 
-            this.BokningsNrTextBox.Location = new System.Drawing.Point(355, 154);
-            this.BokningsNrTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.BokningsNrTextBox.Location = new System.Drawing.Point(266, 125);
             this.BokningsNrTextBox.Name = "BokningsNrTextBox";
-            this.BokningsNrTextBox.Size = new System.Drawing.Size(127, 22);
+            this.BokningsNrTextBox.Size = new System.Drawing.Size(96, 20);
             this.BokningsNrTextBox.TabIndex = 10;
             // 
             // ISBNTextBox
             // 
-            this.ISBNTextBox.Location = new System.Drawing.Point(355, 90);
-            this.ISBNTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.ISBNTextBox.Location = new System.Drawing.Point(266, 73);
             this.ISBNTextBox.Name = "ISBNTextBox";
-            this.ISBNTextBox.Size = new System.Drawing.Size(127, 22);
+            this.ISBNTextBox.Size = new System.Drawing.Size(96, 20);
             this.ISBNTextBox.TabIndex = 9;
             // 
             // dataGridViewÅterlämnade
             // 
             this.dataGridViewÅterlämnade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewÅterlämnade.Location = new System.Drawing.Point(516, 90);
-            this.dataGridViewÅterlämnade.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridViewÅterlämnade.Location = new System.Drawing.Point(387, 73);
             this.dataGridViewÅterlämnade.Name = "dataGridViewÅterlämnade";
+            this.dataGridViewÅterlämnade.RowHeadersVisible = false;
             this.dataGridViewÅterlämnade.RowHeadersWidth = 51;
-            this.dataGridViewÅterlämnade.Size = new System.Drawing.Size(337, 425);
+            this.dataGridViewÅterlämnade.Size = new System.Drawing.Size(253, 345);
             this.dataGridViewÅterlämnade.TabIndex = 8;
             // 
             // återlämnaButton
@@ -103,20 +98,19 @@ namespace PresentatationLayerExpApp
             this.återlämnaButton.FlatAppearance.BorderSize = 0;
             this.återlämnaButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
             this.återlämnaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.återlämnaButton.Location = new System.Drawing.Point(355, 230);
-            this.återlämnaButton.Margin = new System.Windows.Forms.Padding(4);
+            this.återlämnaButton.Location = new System.Drawing.Point(266, 187);
             this.återlämnaButton.Name = "återlämnaButton";
-            this.återlämnaButton.Size = new System.Drawing.Size(128, 41);
+            this.återlämnaButton.Size = new System.Drawing.Size(96, 33);
             this.återlämnaButton.TabIndex = 7;
             this.återlämnaButton.Text = "Bekräfta";
             this.återlämnaButton.UseVisualStyleBackColor = false;
             // 
             // Andra
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(1045, 661);
+            this.ClientSize = new System.Drawing.Size(784, 537);
             this.Controls.Add(this.LabelRubrikÅterlämna);
             this.Controls.Add(this.LabelBokningsNr);
             this.Controls.Add(this.ISBNLabelÅterlämna);
@@ -125,7 +119,6 @@ namespace PresentatationLayerExpApp
             this.Controls.Add(this.dataGridViewÅterlämnade);
             this.Controls.Add(this.återlämnaButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Andra";
             this.Text = "Andra";
             this.Load += new System.EventHandler(this.Andra_Load);
