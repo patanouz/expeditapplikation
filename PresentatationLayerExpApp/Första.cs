@@ -14,7 +14,7 @@ namespace PresentatationLayerExpApp
 {
     public partial class Första : Form
     {
-        BookingSystem bookingSystem { get; set; }
+        BookingSystem bookingSystem;
         public Första()
         {
             InitializeComponent();
@@ -22,8 +22,41 @@ namespace PresentatationLayerExpApp
 
         private void Test_Load(object sender, EventArgs e)
         {
-            BookingSystem bs = new BookingSystem();
-            dataGridViewBöcker.DataSource = bs.AvailableBooks();
+            bookingSystem = BookingSystem.GetBs();
+            dataGridViewBöcker.DataSource = bookingSystem.AvailableBooks();
+        }
+
+        private void dataGridViewBöcker_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var row = e.RowIndex;
+            ISBNTextBox.Text = Convert.ToString(dataGridViewBöcker.Rows[row].Cells[0].Value);
+        }
+
+        private void bokaButton_Click(object sender, EventArgs e)
+        {
+            if (ISBNTextBox.Text.Length < 1){
+                IsbnError.ForeColor = Color.Red;
+                IsbnError.Text = "ISBN saknas.";
+            }
+            else{
+                IsbnError.Text = " ";
+            }
+
+            if (MedlemsNrTextBox.Text.Length < 1){
+                MedlemsNrError.ForeColor = Color.Red;
+                MedlemsNrError.Text = "Medlemsnummer saknas.";
+            }
+            else
+            {
+                if (!bookingSystem.IsMember(MedlemsNrTextBox.Text)){
+                    MedlemsNrError.ForeColor = Color.Red;
+                    MedlemsNrError.Text = "Felaktigt Medlemsnummer.";
+                }
+                else
+                {
+                    MedlemsNrError.Text = " ";
+                }
+            }
         }
     }
 }

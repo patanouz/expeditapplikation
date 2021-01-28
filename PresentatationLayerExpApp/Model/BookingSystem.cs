@@ -40,7 +40,6 @@ namespace ExpeditApplikation
         /// <returns></returns>
         public string LogIn(string userId, string password)
         {
-            // Stupid solution. Not completely after the DSD where Get(id) is a Repository method.
             foreach (User user in data.UserRepository.Table) {
                 if (user.UserID == userId && user.VerifyPassword(password)) {
                     LoggedIn = user;
@@ -72,6 +71,16 @@ namespace ExpeditApplikation
             }
             return bookings;
         }
+
+        public bool IsMember(string memberID)
+        {
+            foreach(Member member in data.MemberRepository.Table)
+            {
+                if (member.MemberID == memberID)
+                    return true;
+            }
+            return false;
+        } 
 
         private Internals.Data data;
     }

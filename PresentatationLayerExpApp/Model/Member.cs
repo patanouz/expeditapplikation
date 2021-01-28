@@ -8,7 +8,7 @@ namespace ExpeditApplikation.Model
 {
     class Member
     {
-        public int MemberID
+        public string MemberID
         {
             get; private set;
         }
@@ -32,7 +32,7 @@ namespace ExpeditApplikation.Model
         {
             get; private set;
         }
-        internal Member(int id, string firstname, string lastname, string tele, string email)
+        internal Member(string id, string firstname, string lastname, string tele, string email)
         {
             MemberID = id;
             FirstName = firstname;
