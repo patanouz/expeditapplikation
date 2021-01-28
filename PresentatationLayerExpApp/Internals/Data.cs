@@ -50,6 +50,16 @@ namespace ExpeditApplikation.Internals
             MemberRepository.Table.Add(new Member(1, "Simon", "Landenberg", "070-1234567", "s193508@student.hb.se"));
 
             //Book
+            BookRepository.Table.Add(new Book(1233123123, "Harry Potter"));
+            BookRepository.Table.Add(new Book(993123123, "Utvandrarna"));
+            BookRepository.Table.Add(new Book(123123123, "Potter"));
+            BookRepository.Table.Add(new Book(123883123, "Häst"));
+            BookRepository.Table.Add(new Book(123123123, "Hund"));
+            BookRepository.Table.Add(new Book(12377123, "Fotboll"));
+            BookRepository.Table.Add(new Book(123100123, "Curling"));
+            BookRepository.Table.Add(new Book(123883123, "Test"));
+            BookRepository.Table.Add(new Book(12883123, "Test"));
+            BookRepository.Table.Add(new Book(12388123, "Test"));
             BookRepository.Table.Add(new Book(123123123, "Test"));
         }
     }
