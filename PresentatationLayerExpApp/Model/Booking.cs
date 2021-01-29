@@ -6,22 +6,22 @@ namespace ExpeditApplikation.Model
 {
     public class Booking
     {
-        public int BookingReference
+        public string BookingReference
         {
             get; private set;
         }
 
-        public int EmployeeID
+        public string UserID
         {
             get; private set;
         }
 
-        public int MemberID
+        public string MemberID
         {
             get; private set;
         }
 
-        public int ISBN
+        public long ISBN
         {
             get; private set;
         }
@@ -34,10 +34,10 @@ namespace ExpeditApplikation.Model
             get; private set;
         }
 
-        internal Booking(int bookingRef, int userId, int memberId, int isbn, DateTime startDate, DateTime expiryDate)
+        internal Booking(string bookingRef, string userId, string memberId, long isbn, DateTime startDate, DateTime expiryDate)
         {
             BookingReference = bookingRef;
-            EmployeeID = userId;
+            UserID = userId;
             MemberID = memberId;
             ISBN = isbn;
             Date = startDate;

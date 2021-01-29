@@ -49,6 +49,11 @@ namespace ExpeditApplikation.Internals
             //Member
             MemberRepository.Table.Add(new Member("1", "Simon", "Landenberg", "070-1234567", "s193508@student.hb.se"));
 
+            //Booking
+            BookingRepository.Table.Add(new Booking("B1", "U1", "C1", 12367978919, DateTime.Now, DateTime.Now));
+            BookingRepository.Table.Add(new Booking("B2", "U2", "C2", 12367978919, DateTime.Now, DateTime.Now));
+
+
             //Book
             BookRepository.Table.Add(new Book(1233123123, "Harry Potter"));
             BookRepository.Table.Add(new Book(993123123, "Utvandrarna"));
