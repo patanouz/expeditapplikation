@@ -56,6 +56,12 @@ namespace PresentatationLayerExpApp
                 {
                     MedlemsNrError.Text = " ";
                 }
+
+            if (IsbnError.Text == " " && MedlemsNrError.Text == " ")
+                {
+                    bookingSystem.AddBooking(MedlemsNrTextBox.Text, ISBNTextBox.Text);
+                    dataGridViewBöcker.DataSource = bookingSystem.AvailableBooks();
+                }
             }
         }
     }

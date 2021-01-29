@@ -11,7 +11,8 @@ namespace ExpeditApplikation
     /// </summary>
     public class BookingSystem
     {
-
+        private int BookingRefIncrement;
+        private string userID;
         private static BookingSystem bs;
 
         public User LoggedIn {
@@ -20,6 +21,7 @@ namespace ExpeditApplikation
 
         public BookingSystem()
         {
+            BookingRefIncrement = 0;
             data = new Data();
         }
 
@@ -43,6 +45,7 @@ namespace ExpeditApplikation
             foreach (User user in data.UserRepository.Table) {
                 if (user.UserID == userId && user.VerifyPassword(password)) {
                     LoggedIn = user;
+                    userID = userId;
                     return user.Role;
                 }
             }
@@ -82,7 +85,22 @@ namespace ExpeditApplikation
                     return true;
             }
             return false;
-        } 
+        }
+        public void AddBooking(string memberId, string isbn)
+        {
+            data.BookingRepository.Table.Add(new Booking(
+                Convert.ToString(BookingRefIncrement++),
+                userID,
+                memberId,
+                (long) Convert.ToInt32(isbn),
+                DateTime.Now,
+                DateTime.Now
+           ));
+           foreach(Book book in data.BookRepository.Table){
+                if (Convert.ToString(book.ISBN) == isbn)
+                    book.Available = false;
+            }
+        }
 
         private Internals.Data data;
     }

@@ -25,5 +25,11 @@ namespace PresentatationLayerExpApp
             BookingSystem bs = new BookingSystem();
             dataGridViewÅterlämnade.DataSource = bs.ExistingBookings();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            BookingSystem bs = new BookingSystem();
+            dataGridViewÅterlämnade.DataSource = bs.ExistingBookings();
+        }
     }
 }
