@@ -15,6 +15,8 @@ namespace PresentatationLayerExpApp
     public partial class Första : Form
     {
         BookingSystem bookingSystem;
+
+        // Hej Anton
         public Första()
         {
             InitializeComponent();
