@@ -50,22 +50,22 @@ namespace ExpeditApplikation.Internals
             MemberRepository.Table.Add(new Member("1", "Simon", "Landenberg", "070-1234567", "s193508@student.hb.se"));
 
             //Booking
-            BookingRepository.Table.Add(new Booking("B1", "U1", "C1", 12367978919, DateTime.Now, DateTime.Now));
-            BookingRepository.Table.Add(new Booking("B2", "U2", "C2", 12367978919, DateTime.Now, DateTime.Now));
+            //BookingRepository.Table.Add(new Booking("B1", "U1", "C1", 12367978919, DateTime.Now, DateTime.Now));
+            //BookingRepository.Table.Add(new Booking("B2", "U2", "C2", 12367978919, DateTime.Now, DateTime.Now));
 
 
             //Book
-            BookRepository.Table.Add(new Book(1233123123, "Harry Potter"));
-            BookRepository.Table.Add(new Book(993123123, "Utvandrarna"));
-            BookRepository.Table.Add(new Book(123123123, "Potter"));
-            BookRepository.Table.Add(new Book(123883123, "Häst"));
-            BookRepository.Table.Add(new Book(123123123, "Hund"));
-            BookRepository.Table.Add(new Book(12377123, "Fotboll"));
-            BookRepository.Table.Add(new Book(123100123, "Curling"));
-            BookRepository.Table.Add(new Book(123883123, "Test"));
-            BookRepository.Table.Add(new Book(12883123, "Test"));
-            BookRepository.Table.Add(new Book(12388123, "Test"));
-            BookRepository.Table.Add(new Book(123123123, "Test"));
+            BookRepository.Table.Add(new Book(1234567890987654, "Harry Potter", 14));
+            BookRepository.Table.Add(new Book(123456789, "Utvandrarna"));
+            BookRepository.Table.Add(new Book(234567890, "Potter"));
+            BookRepository.Table.Add(new Book(345678901, "Häst"));
+            BookRepository.Table.Add(new Book(456789012, "Hund"));
+            BookRepository.Table.Add(new Book(567890123, "Fotboll"));
+            BookRepository.Table.Add(new Book(6789012345, "Curling"));
+            BookRepository.Table.Add(new Book(7890123456, "Test"));
+            BookRepository.Table.Add(new Book(8901234567, "Test1"));
+            BookRepository.Table.Add(new Book(9012345678, "Test2"));
+            BookRepository.Table.Add(new Book(9876543210, "Test3"));
         }
     }
 }

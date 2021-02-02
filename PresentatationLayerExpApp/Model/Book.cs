@@ -19,10 +19,30 @@ namespace ExpeditApplikation.Model
             get; set;
         }
 
+        public int Days
+        {
+            get; private set;
+        }
+
         internal Book(long isbn, string title){
             ISBN = isbn;
             Title = title;
             Available = true;
+            Days = 7;
+
+        }
+
+        /* La till en extra constructor för att välja hur många dagar
+         * boken ska vara tillgänglig. 
+         * Om det inte anges så är default 7 dagar.
+         */
+        internal Book(long isbn, string title, int days)
+        {
+            ISBN = isbn;
+            Title = title;
+            Days = days;
+            Available = true;
+
         }
     }
 }

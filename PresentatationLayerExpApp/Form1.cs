@@ -30,7 +30,7 @@ namespace PresentatationLayerExpApp
             allaForms = new Form[2];
 
             första = new Första();
-            andra = new Andra(bookingSystem);
+            andra = new Andra();
 
             allaForms[0] = första;
             allaForms[1] = andra;
@@ -81,6 +81,7 @@ namespace PresentatationLayerExpApp
             Reset();
             första.Show();
             första.Location = p;
+            första.AvailableOrAllBooks();
         }
 
 
@@ -89,6 +90,7 @@ namespace PresentatationLayerExpApp
             Reset();
             andra.Show();
             andra.Location = p;
+            andra.ReturnedOrNotBooks();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

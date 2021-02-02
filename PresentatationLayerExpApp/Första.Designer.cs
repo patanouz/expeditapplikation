@@ -38,6 +38,7 @@ namespace PresentatationLayerExpApp
             this.LabelRubrik = new System.Windows.Forms.Label();
             this.MedlemsNrError = new System.Windows.Forms.Label();
             this.IsbnError = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBöcker)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,7 +66,7 @@ namespace PresentatationLayerExpApp
             this.dataGridViewBöcker.RowHeadersWidth = 51;
             this.dataGridViewBöcker.Size = new System.Drawing.Size(285, 345);
             this.dataGridViewBöcker.TabIndex = 1;
-            this.dataGridViewBöcker.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBöcker_CellContentClick);
+            this.dataGridViewBöcker.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBöcker_CellClick);
             // 
             // ISBNTextBox
             // 
@@ -112,22 +113,33 @@ namespace PresentatationLayerExpApp
             // MedlemsNrError
             // 
             this.MedlemsNrError.AutoSize = true;
+            this.MedlemsNrError.ForeColor = System.Drawing.Color.Red;
             this.MedlemsNrError.Location = new System.Drawing.Point(170, 156);
             this.MedlemsNrError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.MedlemsNrError.Name = "MedlemsNrError";
-            this.MedlemsNrError.Size = new System.Drawing.Size(10, 13);
+            this.MedlemsNrError.Size = new System.Drawing.Size(0, 13);
             this.MedlemsNrError.TabIndex = 7;
-            this.MedlemsNrError.Text = " ";
             // 
             // IsbnError
             // 
             this.IsbnError.AutoSize = true;
+            this.IsbnError.ForeColor = System.Drawing.Color.Red;
             this.IsbnError.Location = new System.Drawing.Point(170, 103);
             this.IsbnError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.IsbnError.Name = "IsbnError";
-            this.IsbnError.Size = new System.Drawing.Size(10, 13);
+            this.IsbnError.Size = new System.Drawing.Size(0, 13);
             this.IsbnError.TabIndex = 8;
-            this.IsbnError.Text = " ";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(387, 50);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(126, 17);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "Visa utlånade böcker";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Första
             // 
@@ -135,6 +147,7 @@ namespace PresentatationLayerExpApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(784, 537);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.IsbnError);
             this.Controls.Add(this.MedlemsNrError);
             this.Controls.Add(this.LabelRubrik);
@@ -165,5 +178,6 @@ namespace PresentatationLayerExpApp
         private System.Windows.Forms.Label LabelRubrik;
         private System.Windows.Forms.Label MedlemsNrError;
         private System.Windows.Forms.Label IsbnError;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
