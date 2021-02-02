@@ -106,7 +106,7 @@ namespace PresentatationLayerExpApp
             this.LabelRubrik.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelRubrik.Location = new System.Drawing.Point(12, 9);
             this.LabelRubrik.Name = "LabelRubrik";
-            this.LabelRubrik.Size = new System.Drawing.Size(194, 26);
+            this.LabelRubrik.Size = new System.Drawing.Size(242, 31);
             this.LabelRubrik.TabIndex = 6;
             this.LabelRubrik.Text = "Registrera bokning";
             // 
