@@ -38,8 +38,8 @@ namespace PresentatationLayerExpApp
             this.LabelRubrik = new System.Windows.Forms.Label();
             this.MedlemsNrError = new System.Windows.Forms.Label();
             this.IsbnError = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.DateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBöcker)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,14 +136,6 @@ namespace PresentatationLayerExpApp
             this.IsbnError.TabIndex = 8;
             this.IsbnError.Text = " ";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(743, 21);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 22);
-            this.textBox1.TabIndex = 9;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -154,14 +146,21 @@ namespace PresentatationLayerExpApp
             this.label1.TabIndex = 10;
             this.label1.Text = "Datum";
             // 
+            // DateTimePicker
+            // 
+            this.DateTimePicker.Location = new System.Drawing.Point(696, 25);
+            this.DateTimePicker.Name = "DateTimePicker";
+            this.DateTimePicker.Size = new System.Drawing.Size(200, 22);
+            this.DateTimePicker.TabIndex = 11;
+            // 
             // Första
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(1045, 661);
+            this.Controls.Add(this.DateTimePicker);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.IsbnError);
             this.Controls.Add(this.MedlemsNrError);
             this.Controls.Add(this.LabelRubrik);
@@ -193,7 +192,7 @@ namespace PresentatationLayerExpApp
         private System.Windows.Forms.Label LabelRubrik;
         private System.Windows.Forms.Label MedlemsNrError;
         private System.Windows.Forms.Label IsbnError;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker DateTimePicker;
     }
 }
