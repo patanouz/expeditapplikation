@@ -92,7 +92,7 @@ namespace PresentatationLayerExpApp
                 return;
             }
 
-            if (!bookingSystem.IsMember(MedlemsNrTextBox.Text))
+            if (!bookingSystem.IsMember(MedlemsNrTextBox.Text.ToUpper()))
             {
                 MedlemsNrError.Text = "Felaktigt Medlemsnummer.";
             }
@@ -107,7 +107,7 @@ namespace PresentatationLayerExpApp
 
             if (IsbnError.Text == "" && MedlemsNrError.Text == "")
             {
-                bookingSystem.AddBooking(MedlemsNrTextBox.Text, b);
+                bookingSystem.AddBooking(MedlemsNrTextBox.Text.ToUpper(), b);
                 AvailableOrAllBooks();
                 ISBNTextBox.Text = "";
             }

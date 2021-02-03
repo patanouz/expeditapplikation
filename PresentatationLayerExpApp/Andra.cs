@@ -45,7 +45,7 @@ namespace PresentatationLayerExpApp
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bs.ReturnBook(bokningsNummerTextBox.Text);
+            bs.ReturnBook(bokningsNummerTextBox.Text.ToUpper());
             ReturnedOrNotBooks();
             
         }
