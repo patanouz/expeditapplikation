@@ -66,6 +66,7 @@ namespace PresentatationLayerExpApp
             this.dataGridViewBöcker.RowHeadersWidth = 51;
             this.dataGridViewBöcker.Size = new System.Drawing.Size(558, 393);
             this.dataGridViewBöcker.TabIndex = 1;
+            this.dataGridViewBöcker.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBöcker_CellClick);
             this.dataGridViewBöcker.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewBöcker_DataBindingComplete);
             // 
             // MedlemsNrTextBox
@@ -121,7 +122,7 @@ namespace PresentatationLayerExpApp
             // 
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.dateTimePicker.Location = new System.Drawing.Point(13, 64);
-            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(163, 23);
             this.dateTimePicker.TabIndex = 10;
@@ -138,7 +139,7 @@ namespace PresentatationLayerExpApp
             this.bookingErrorMessage.TabIndex = 11;
             this.bookingErrorMessage.Text = " ";
             // 
-            // Första
+            // BokningUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,7 +155,7 @@ namespace PresentatationLayerExpApp
             this.Controls.Add(this.dataGridViewBöcker);
             this.Controls.Add(this.bokaButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Första";
+            this.Name = "BokningUI";
             this.Text = "       ";
             this.Load += new System.EventHandler(this.Test_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBöcker)).EndInit();
