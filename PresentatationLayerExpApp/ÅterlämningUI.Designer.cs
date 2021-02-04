@@ -1,7 +1,7 @@
 ﻿
 namespace PresentatationLayerExpApp
 {
-    partial class Andra
+    partial class ÅterlämningUI
     {
         /// <summary>
         /// Required designer variable.
@@ -87,7 +87,7 @@ namespace PresentatationLayerExpApp
             this.återlämnaButton.TabIndex = 7;
             this.återlämnaButton.Text = "Bekräfta återlämning";
             this.återlämnaButton.UseVisualStyleBackColor = false;
-            this.återlämnaButton.Click += new System.EventHandler(this.button2_Click);
+            this.återlämnaButton.Click += new System.EventHandler(this.returnBookButton_Click);
             // 
             // bokningsNummerTextBox
             // 
@@ -135,7 +135,7 @@ namespace PresentatationLayerExpApp
             this.checkBox1.TabIndex = 22;
             this.checkBox1.Text = "Visa alla bokningar";
             this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkbox_StatusBookings);
             // 
             // ErrorMessageLabel
             // 

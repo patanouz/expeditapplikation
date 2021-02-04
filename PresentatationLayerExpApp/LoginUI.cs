@@ -11,27 +11,27 @@ using ExpeditApplikation;
 
 namespace PresentatationLayerExpApp
 {
-    public partial class Login : Form
+    public partial class LoginUI : Form
     {
         BookingSystem bookingSystem;
 
-        public Login()
+        public LoginUI()
         {
             InitializeComponent();
             bookingSystem = BookingSystem.GetBs();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void LogginButton_Click(object sender, EventArgs e)
         {
             if (bookingSystem.LogIn(textBox1.Text, textBox2.Text) == "admin")
             {
-                Form1 f = new Form1(bookingSystem);
+                ControllerUI f = new ControllerUI(bookingSystem);
                 f.Show();
                 this.Hide();
             }
             else if (bookingSystem.LogIn(textBox1.Text, textBox2.Text) == "supervisor")
             {
-                Form1 f = new Form1(bookingSystem);
+                ControllerUI f = new ControllerUI(bookingSystem);
                 f.Show();
                 this.Hide();
             }
@@ -42,7 +42,7 @@ namespace PresentatationLayerExpApp
             }
         }
 
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        private void FelhanteringInlogg_KeyPress(object sender, KeyPressEventArgs e)
         {
             
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&

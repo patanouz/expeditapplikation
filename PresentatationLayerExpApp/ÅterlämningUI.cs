@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace PresentatationLayerExpApp
 {
-    public partial class Andra : Form
+    public partial class ÅterlämningUI : Form
     {
 
         BookingSystem bookingSystem;
         private DataTable table;
 
-        public Andra()
+        public ÅterlämningUI()
         {
             InitializeComponent();
             bookingSystem = BookingSystem.GetBs();
@@ -35,7 +35,7 @@ namespace PresentatationLayerExpApp
             dataGridViewÅterlämnade.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void returnBookButton_Click(object sender, EventArgs e)
         {
             foreach(DataRow row in table.Rows)
             {
@@ -55,7 +55,7 @@ namespace PresentatationLayerExpApp
         }
 
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkbox_StatusBookings(object sender, EventArgs e)
         {
             //Amending Table Columns
             if (checkBox1.Checked)

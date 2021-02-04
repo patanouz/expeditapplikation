@@ -11,36 +11,36 @@ using System.Windows.Forms;
 
 namespace PresentatationLayerExpApp
 {
-    public partial class Form1 : Form
+    public partial class ControllerUI : Form
     {
         BookingSystem bookingSystem { get; set; }
 
-        Första första;
-        Andra andra;
+        BokningUI BokningUI;
+        ÅterlämningUI ÅterlämningUI;
 
         Form[] allaForms;
 
         Point p = new Point(0, 0);
 
-        public Form1(BookingSystem system)
+        public ControllerUI(BookingSystem system)
         {
             InitializeComponent();
 
             bookingSystem = system;
             allaForms = new Form[2];
 
-            första = new Första();
-            andra = new Andra();
+            BokningUI = new BokningUI();
+            ÅterlämningUI = new ÅterlämningUI();
 
-            allaForms[0] = första;
-            allaForms[1] = andra;
+            allaForms[0] = BokningUI;
+            allaForms[1] = ÅterlämningUI;
 
             foreach(Form f in allaForms)
             {
                 f.MdiParent = this;
             }
 
-            första.Show();
+            BokningUI.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -77,18 +77,18 @@ namespace PresentatationLayerExpApp
         private void förstaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Reset();
-            första.Show();
-            första.Location = p;
-            första.UpdateTable();
+            BokningUI.Show();
+            BokningUI.Location = p;
+            BokningUI.UpdateTable();
         }
 
 
         private void andraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Reset();
-            andra.Show();
-            andra.Location = p;
-            andra.updateTable();
+            ÅterlämningUI.Show();
+            ÅterlämningUI.Location = p;
+            ÅterlämningUI.updateTable();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

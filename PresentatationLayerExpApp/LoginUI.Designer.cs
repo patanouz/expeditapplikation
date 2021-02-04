@@ -1,7 +1,7 @@
 ﻿
 namespace PresentatationLayerExpApp
 {
-    partial class Login
+    partial class LoginUI
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace PresentatationLayerExpApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginUI));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.loggaInButton = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@ namespace PresentatationLayerExpApp
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
-            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FelhanteringInlogg_KeyPress);
             // 
             // textBox2
             // 
@@ -67,7 +67,7 @@ namespace PresentatationLayerExpApp
             this.loggaInButton.TabIndex = 2;
             this.loggaInButton.Text = "Logga in";
             this.loggaInButton.UseVisualStyleBackColor = false;
-            this.loggaInButton.Click += new System.EventHandler(this.button1_Click);
+            this.loggaInButton.Click += new System.EventHandler(this.LogginButton_Click);
             // 
             // labelAnställning
             // 

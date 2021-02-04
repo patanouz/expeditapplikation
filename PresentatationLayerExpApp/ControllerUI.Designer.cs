@@ -1,7 +1,7 @@
 ﻿
 namespace PresentatationLayerExpApp
 {
-    partial class Form1
+    partial class ControllerUI
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace PresentatationLayerExpApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControllerUI));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.förstaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.andraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,15 +52,15 @@ namespace PresentatationLayerExpApp
             // förstaToolStripMenuItem
             // 
             this.förstaToolStripMenuItem.Name = "förstaToolStripMenuItem";
-            this.förstaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.förstaToolStripMenuItem.Text = "Första";
+            this.förstaToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.förstaToolStripMenuItem.Text = "Bokning";
             this.förstaToolStripMenuItem.Click += new System.EventHandler(this.förstaToolStripMenuItem_Click);
             // 
             // andraToolStripMenuItem
             // 
             this.andraToolStripMenuItem.Name = "andraToolStripMenuItem";
-            this.andraToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.andraToolStripMenuItem.Text = "Andra";
+            this.andraToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.andraToolStripMenuItem.Text = "Återlämning";
             this.andraToolStripMenuItem.Click += new System.EventHandler(this.andraToolStripMenuItem_Click);
             // 
             // Form1

@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace PresentatationLayerExpApp
 {
-    public partial class Första : Form
+    public partial class BokningUI : Form
     {
         BookingSystem bookingSystem;
         public DataTable table;
 
-        public Första()
+        public BokningUI()
         {
             InitializeComponent();
             dataGridViewBöcker.AllowUserToResizeRows = false;
