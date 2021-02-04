@@ -30,6 +30,9 @@ namespace PresentatationLayerExpApp
         {
             bookingSystem = BookingSystem.GetBs();
             UpdateTable();
+
+            dataGridViewBöcker.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dataGridViewBöcker.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void bokaButton_Click(object sender, EventArgs e)

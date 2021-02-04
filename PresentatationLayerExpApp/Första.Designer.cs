@@ -65,7 +65,7 @@ namespace PresentatationLayerExpApp
             this.dataGridViewBöcker.Name = "dataGridViewBöcker";
             this.dataGridViewBöcker.RowHeadersVisible = false;
             this.dataGridViewBöcker.RowHeadersWidth = 51;
-            this.dataGridViewBöcker.Size = new System.Drawing.Size(560, 455);
+            this.dataGridViewBöcker.Size = new System.Drawing.Size(569, 455);
             this.dataGridViewBöcker.TabIndex = 1;
             this.dataGridViewBöcker.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewBöcker_DataBindingComplete);
             // 
