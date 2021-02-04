@@ -31,6 +31,7 @@ namespace PresentatationLayerExpApp
             bookingSystem = BookingSystem.GetBs();
             UpdateTable();
         }
+
         private void bokaButton_Click(object sender, EventArgs e)
         {
             Book b;
@@ -56,7 +57,7 @@ namespace PresentatationLayerExpApp
                     if (Convert.ToBoolean(row["Låna"]) == true)
                     {
                         Book book = new Book((long)Convert.ToInt64(row["ISBN"]), Convert.ToString(row["Titel"]));
-                        bookingSystem.AddBooking(MedlemsNrTextBox.Text.ToUpper(), book);
+                        bookingSystem.AddBooking(MedlemsNrTextBox.Text.ToUpper(), book, dateTimePicker.Value);
                         activeBooking = true;
                     }
                 }

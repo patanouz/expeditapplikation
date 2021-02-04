@@ -106,7 +106,7 @@ namespace ExpeditApplikation
         {
             if (booking.Returned == null)
             {
-                if (booking.ExpiryDate > DateTime.Now.AddDays(14))
+                if (booking.ExpiryDate > DateTime.Now)
                     return "active";
                 else
                     return "delayed";
@@ -181,8 +181,7 @@ namespace ExpeditApplikation
             throw new ArgumentException("Argument does not exist within BookRepository");
         }
 
-
-        public void AddBooking(string memberId, Book book)
+        public void AddBooking(string memberId, Book book, DateTime date)
         {
             //Eftersom FindBook kan returnera null så hanterar jag null som ett fel
             if (book == null)
@@ -190,18 +189,17 @@ namespace ExpeditApplikation
                 return;
             }
 
-            DateTime loanTime = DateTime.Now;
-
+            DateTime loanTime = date;
             loanTime = loanTime.AddDays(book.Days);
 
-            Console.WriteLine("Now: " + DateTime.Now + "\nExpiry: " + loanTime);
+            Console.WriteLine("Now: " + date + "\nExpiry: " + loanTime);
             data.BookingRepository.Table.Add(new Booking(
                 "B" + Convert.ToString(BookingRefIncrement++),
                 userID,
                 book.Title,
                 memberId,
                 Convert.ToInt64(book.ISBN),
-                DateTime.Now,
+                date,
                 loanTime
            ));
         }
