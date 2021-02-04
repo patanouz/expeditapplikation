@@ -72,7 +72,7 @@ namespace ExpeditApplikation
         {
             foreach (Booking booking in data.BookingRepository.Table)
             {
-                if (booking.ISBN == book.ISBN && date >= booking.Date && date <= booking.ExpiryDate)
+                if (booking.ISBN == book.ISBN && date >= booking.Date && date <= booking.ExpiryDate && booking.Returned == null)
                 {
                     return false;
                 }
