@@ -72,9 +72,10 @@ namespace ExpeditApplikation
         {
             foreach (Booking booking in data.BookingRepository.Table)
             {
-                if (booking.ISBN == book.ISBN && date >= booking.Date && date <= booking.ExpiryDate && booking.Returned == null)
+                if (booking.ISBN == book.ISBN && date >= booking.Date && date <= booking.ExpiryDate)
                 {
-                    return false;
+                    if(booking.Returned == null || booking.Returned > date)
+                        return false;
                 }
             }
             return true;
@@ -138,7 +139,7 @@ namespace ExpeditApplikation
                 {
                     try
                     {
-                        int index = FindBook("" + booking.ISBN);
+                        int index = FindBooking(bookingId);
 
                         data.BookingRepository.Table[index].Returned = DateTime.Now;
                         if (booking.ExpiryDate < booking.Returned)
@@ -152,28 +153,12 @@ namespace ExpeditApplikation
                     }
                 }
             }
-            //TODO: faktura osv, men orkar inte ta det när jag inte kan testa det.
-            //Behöver fixa om datetime.now och adddays först, annars måste jag vänta 
-            //7 dagar på att se om det funkar.
         }
-
-        /* Lägger till en metod för att söka bok på ID, behöver den
-         * För tillfället behöver jag den endast i metoden AddBooking 
-         * men den kanske behövs senare också.
-         */
-        public int FindBook(string isbn)
+        public int FindBooking(string bookingRef)
         {
-            /* Kollar så att isbn ej innehåller bokstäver, det pajjar int.Parse
-             * Vill inte köra en tryparse. Onödigt att göra detta egentligen
-             * men man ska helst undvika try/catch om det går. try/catch
-             * är väldigt oeffektivt. Anser inte att det är ineffektivt eftersom
-             * det enbart exekveras när någonting gått riktigt fel. Strukturerar 
-             * dessutom om för att minska risken för fel.
-             */
-
-            for (int i = 0; i < data.BookRepository.Table.Count; i++)
+            for (int i = 0; i < data.BookingRepository.Table.Count; i++)
             {
-                if (data.BookRepository.Table[i].ISBN.Equals(long.Parse(isbn)))
+                if (data.BookingRepository.Table[i].BookingReference.Equals(bookingRef))
                 {
                     return i;
                 }

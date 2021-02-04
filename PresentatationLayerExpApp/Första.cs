@@ -152,5 +152,10 @@ namespace PresentatationLayerExpApp
         {
             dataGridViewBöcker.ClearSelection();
         }
+
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateTable();
+        }
     }
 }
