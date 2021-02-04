@@ -146,5 +146,10 @@ namespace PresentatationLayerExpApp
                 dataGridViewBöcker.DataSource = table;
             }
         }
+
+        private void dataGridViewBöcker_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewBöcker.ClearSelection();
+        }
     }
 }

@@ -71,6 +71,7 @@ namespace PresentatationLayerExpApp
             this.dataGridViewÅterlämnade.Size = new System.Drawing.Size(1013, 458);
             this.dataGridViewÅterlämnade.TabIndex = 8;
             this.dataGridViewÅterlämnade.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewÅterlämnade_CellClick);
+            this.dataGridViewÅterlämnade.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewÅterlämnade_DataBindingComplete);
             // 
             // återlämnaButton
             // 

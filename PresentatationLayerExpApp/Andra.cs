@@ -229,5 +229,10 @@ namespace PresentatationLayerExpApp
                     filterByMember(medlemsNummerTextBox.Text);
             }
         }
+
+        private void dataGridViewÅterlämnade_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridViewÅterlämnade.ClearSelection();
+        }
     }
 }
