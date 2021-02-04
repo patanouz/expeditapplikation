@@ -14,11 +14,6 @@ namespace ExpeditApplikation.Model
             get; private set;
         }
 
-        public bool Available
-        {
-            get; set;
-        }
-
         public int Days
         {
             get; private set;
@@ -27,9 +22,7 @@ namespace ExpeditApplikation.Model
         internal Book(long isbn, string title){
             ISBN = isbn;
             Title = title;
-            Available = true;
             Days = 7;
-
         }
 
         /* La till en extra constructor för att välja hur många dagar
@@ -41,8 +34,6 @@ namespace ExpeditApplikation.Model
             ISBN = isbn;
             Title = title;
             Days = days;
-            Available = true;
-
         }
     }
 }

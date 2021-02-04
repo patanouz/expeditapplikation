@@ -3,6 +3,7 @@ using ExpeditApplikation.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ExpeditApplikation
 {
@@ -13,7 +14,7 @@ namespace ExpeditApplikation
     {
         private int BookingRefIncrement;
         private string userID;
-        private static BookingSystem bs;
+        private static BookingSystem bookingSystem;
 
         public User LoggedIn
         {
@@ -28,11 +29,11 @@ namespace ExpeditApplikation
 
         public static BookingSystem GetBs()
         {
-            if (bs == null)
+            if (bookingSystem == null)
             {
-                bs = new BookingSystem();
+                bookingSystem = new BookingSystem();
             }
-            return bs;
+            return bookingSystem;
         }
 
         /// <summary>
@@ -55,19 +56,28 @@ namespace ExpeditApplikation
             return "false";
         }
 
-
-
-        public IList<Book> AvailableBooks()
-        {
-            
+        public IList<Book> AvailableBooks(DateTime date)
+        {           
             List<Book> availableBooks = new List<Book>();
             foreach (Book book in data.BookRepository.Table)
             {
-                if (book.Available == true)
-                    availableBooks.Add(book);
-
+                availableBooks.Add(book);
+                if (!IsAvailable(book, date))
+                    availableBooks.Remove(book);
             }
             return availableBooks;
+        }
+
+        public bool IsAvailable(Book book, DateTime date)
+        {
+            foreach (Booking booking in data.BookingRepository.Table)
+            {
+                if (booking.ISBN == book.ISBN && date >= booking.Date && date <= booking.ExpiryDate)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
 
         public IList<Book> AllBooks()
@@ -75,23 +85,39 @@ namespace ExpeditApplikation
             return data.BookRepository.Table;
         }
 
-        public IList<Booking> ExistingBookings()
+        public IList<Booking> AllBookings()
         {
-            
             return data.BookingRepository.Table;
         }
 
-        public IList<Booking> NonReturnedBookings()
+        public IList<Booking> ExistingBookings()
         {
-            List<Booking> bookings = new List<Booking>();
+            IList<Booking> currentBookings = new List<Booking>();
+
             foreach (Booking booking in data.BookingRepository.Table)
             {
-                if(!booking.returned)
-                {
-                    bookings.Add(booking);
-                }
+                if (booking.Returned == null)
+                    currentBookings.Add(booking);
             }
-            return bookings;
+            return currentBookings;
+        }
+
+        public string bookingStatus(Booking booking)
+        {
+            if (booking.Returned == null)
+            {
+                if (booking.ExpiryDate > DateTime.Now.AddDays(14))
+                    return "active";
+                else
+                    return "delayed";
+            }
+            else
+            {
+                if (booking.OustandingPayment <= 0)
+                    return "paid";
+                else
+                    return "pending";
+            }
         }
 
         public bool IsMember(string memberID)
@@ -106,14 +132,24 @@ namespace ExpeditApplikation
 
         public void ReturnBook(string bookingId)
         {
-
-            foreach(Booking bk in data.BookingRepository.Table)
+            foreach(Booking booking in data.BookingRepository.Table)
             {
-                if(bk.BookingReference == bookingId)
+                if(booking.BookingReference == bookingId)
                 {
-                    bk.returned = true;
-                    Book b = FindBook("" + bk.ISBN);
-                    b.Available = true;
+                    try
+                    {
+                        int index = FindBook("" + booking.ISBN);
+
+                        data.BookingRepository.Table[index].Returned = DateTime.Now;
+                        if (booking.ExpiryDate < booking.Returned)
+                        {
+                            booking.OustandingPayment = Math.Ceiling((booking.ExpiryDate - DateTime.Now).TotalDays) * 10;
+                        }
+                    }
+                    catch (ArgumentException)
+                    {
+                        throw new ArgumentException("Argument does not exist within BookRepository");
+                    }
                 }
             }
             //TODO: faktura osv, men orkar inte ta det när jag inte kan testa det.
@@ -125,55 +161,37 @@ namespace ExpeditApplikation
          * För tillfället behöver jag den endast i metoden AddBooking 
          * men den kanske behövs senare också.
          */
-        public Book FindBook(string isbn)
+        public int FindBook(string isbn)
         {
-
             /* Kollar så att isbn ej innehåller bokstäver, det pajjar int.Parse
              * Vill inte köra en tryparse. Onödigt att göra detta egentligen
              * men man ska helst undvika try/catch om det går. try/catch
-             * är väldigt oeffektivt.
+             * är väldigt oeffektivt. Anser inte att det är ineffektivt eftersom
+             * det enbart exekveras när någonting gått riktigt fel. Strukturerar 
+             * dessutom om för att minska risken för fel.
              */
-            if (!isbn.All(c => c >= '0' && c <= '9'))
-            {
-                return null;
-            }
 
-
-            foreach (Book b in data.BookRepository.Table)
+            for (int i = 0; i < data.BookRepository.Table.Count; i++)
             {
-                if (b.ISBN.Equals(long.Parse(isbn)))
+                if (data.BookRepository.Table[i].ISBN.Equals(long.Parse(isbn)))
                 {
-                    return b;
+                    return i;
                 }
             }
-            return null;
+            throw new ArgumentException("Argument does not exist within BookRepository");
         }
 
 
         public void AddBooking(string memberId, Book book)
         {
-
-
             //Eftersom FindBook kan returnera null så hanterar jag null som ett fel
             if (book == null)
             {
-                //TODO: behöver kolla om det behöver indikeras för användaren.
-                //Tror inte denna if-satsen ens behövs.
                 return;
             }
 
             DateTime loanTime = DateTime.Now;
 
-            /* Hämtar dagar från bok.
-             * Tänkte skriva om denna lite för att använda sekunder istället
-             * men endast om den testas med testkonto, eller något.
-             * 
-             * Jag orkar inte vänta 7 dagar på att ta reda på om koden funkar,
-             * gör ni?
-             * 
-             * Gör det senare.
-             * TODO: Fix.
-             */
             loanTime = loanTime.AddDays(book.Days);
 
             Console.WriteLine("Now: " + DateTime.Now + "\nExpiry: " + loanTime);
@@ -186,15 +204,6 @@ namespace ExpeditApplikation
                 DateTime.Now,
                 loanTime
            ));
-
-            book.Available = false;
-
-            //Detta behövs ej längre.
-            /*foreach(Book boo in data.BookRepository.Table){
-                if (Convert.ToString(boo.ISBN) == isbn)
-                    boo.Available = false;
-            }
-            */
         }
 
         private Internals.Data data;

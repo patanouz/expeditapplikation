@@ -20,7 +20,6 @@ namespace ExpeditApplikation.Model
             get; private set;
         }
 
-
         internal User(string id, string password, string name, string role)
         {
             UserID = id;

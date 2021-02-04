@@ -66,7 +66,6 @@ namespace PresentatationLayerExpApp
             mdiclient.ResumeLayout(true);
             this.ResumeLayout(true);
             base.OnLoad(e);
-
         }
 
         private void Reset()
@@ -81,7 +80,7 @@ namespace PresentatationLayerExpApp
             Reset();
             första.Show();
             första.Location = p;
-            första.AvailableOrAllBooks();
+            första.UpdateTable();
         }
 
 
@@ -90,7 +89,7 @@ namespace PresentatationLayerExpApp
             Reset();
             andra.Show();
             andra.Location = p;
-            andra.ReturnedOrNotBooks();
+            andra.updateTable();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)

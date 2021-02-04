@@ -15,39 +15,147 @@ namespace PresentatationLayerExpApp
     public partial class Andra : Form
     {
 
-        BookingSystem bs;
+        BookingSystem bookingSystem;
+        private DataTable table;
 
         public Andra()
         {
             InitializeComponent();
-            bs = BookingSystem.GetBs();
+            bookingSystem = BookingSystem.GetBs();
             dataGridViewÅterlämnade.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewÅterlämnade.MultiSelect = false;
             dataGridViewÅterlämnade.AllowUserToResizeRows = false;
-
+            dataGridViewÅterlämnade.AllowUserToAddRows = false;
         }
         private void Andra_Load(object sender, EventArgs e)
         {
-            dataGridViewÅterlämnade.DataSource = bs.ExistingBookings();
+            updateTable();
 
-            //Väljer att dölja userid, ni får säga vad ni tycker om det men det känns onödigt.
-            //Det borde ändå vara kvar, det blir användbart i chefsapplikationen som jag
-            //kanske vill göra :)
-            dataGridViewÅterlämnade.Columns[1].Visible = false;
-
-            /* Resize'ar alla kolumner så att dom ska bli så små som det behövs 
-             * för att dom ska passa. Sen ändrar jag en (titel) till att bli size fill
-             * så tar den upp resterande plats. 
-             */
             dataGridViewÅterlämnade.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            dataGridViewÅterlämnade.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewÅterlämnade.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bs.ReturnBook(bokningsNummerTextBox.Text.ToUpper());
-            ReturnedOrNotBooks();
-            
+            foreach(DataRow row in table.Rows)
+            {
+                if (Convert.ToBoolean(row["Återlämna"]) == true)
+                {
+                    try
+                    {
+                        bookingSystem.ReturnBook(Convert.ToString(row["Ref."]));
+                    }
+                    catch (ArgumentException)
+                    {
+                        ErrorMessageLabel.Text = "All bookings cannot be found.";
+                    }
+                }
+            }
+            updateTable();
+        }
+
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            //Amending Table Columns
+            if (checkBox1.Checked)
+            {
+                table.Columns.Remove("Återlämna");
+                table.Columns.Add("Återlämnad", typeof(DateTime));
+                table.Columns.Add("Faktura", typeof(string));
+            }
+            else
+            {
+                table.Columns.Remove("Återlämnad");
+                table.Columns.Remove("Faktura");
+                table.Columns.Add("Återlämna", typeof(bool));
+            }
+            updateTable();
+        }
+
+        public void updateTable()
+        {
+            //Create Table
+            if (table == null)
+            {
+                table = new DataTable();
+
+                //Adding Columns
+                table.Columns.Add("Ref.", typeof(string));
+                table.Columns.Add("AdminID", typeof(string));
+                table.Columns.Add("MedlemID", typeof(string));
+                table.Columns.Add("Titel", typeof(string));
+                table.Columns.Add("ISBN", typeof(long));
+                table.Columns.Add("Datum", typeof(DateTime));
+                table.Columns.Add("FörfalloDatum", typeof(DateTime));
+                table.Columns.Add("Återlämna", typeof(bool));
+
+                //Read Only
+                table.Columns["Ref."].ReadOnly = true;
+                table.Columns["AdminID"].ReadOnly = true;
+                table.Columns["MedlemID"].ReadOnly = true;
+                table.Columns["Titel"].ReadOnly = true;
+                table.Columns["ISBN"].ReadOnly = true;
+                table.Columns["Datum"].ReadOnly = true;
+                table.Columns["FörfalloDatum"].ReadOnly = true;
+                table.Columns["Återlämna"].ReadOnly = false;
+            }
+            else
+                table.Clear();
+
+            //Amending Table For Booking Record
+            if (checkBox1.Checked)
+            {
+                var bookings = bookingSystem.AllBookings();
+
+                //Input All Booking Data
+                foreach (Booking booking in bookings)
+                {
+                    DataRow row = table.NewRow();
+                    row["Ref."] = booking.BookingReference;
+                    row["AdminID"] = booking.UserID;
+                    row["MedlemID"] = booking.MemberID;
+                    row["Titel"] = booking.Title;
+                    row["ISBN"] = booking.ISBN;
+                    row["Datum"] = booking.Date;
+                    row["FörfalloDatum"] = booking.ExpiryDate;
+                    if (booking.Returned != null)
+                        row["Återlämnad"] = booking.Returned;
+                    row["Faktura"] = Convert.ToString(booking.OustandingPayment) + " SEK";
+                    table.Rows.Add(row);
+                }
+                dataGridViewÅterlämnade.DataSource = table;
+
+                for(int i=0; i< bookingSystem.AllBookings().Count; i++)
+                {
+                    var bookingStatus = bookingSystem.bookingStatus(bookings[i]);
+                    switch (bookingStatus)
+                    {
+                        case "active": dataGridViewÅterlämnade.Rows[i].DefaultCellStyle.BackColor = Color.White; break;
+                        case "delayed": dataGridViewÅterlämnade.Rows[i].DefaultCellStyle.BackColor = Color.PaleVioletRed; break;
+                        case "paid": dataGridViewÅterlämnade.Rows[i].DefaultCellStyle.BackColor = Color.LightGray; break;
+                        case "pending": dataGridViewÅterlämnade.Rows[i].DefaultCellStyle.BackColor = Color.Yellow; break;
+                    }
+                }
+            }
+            else
+            {
+                //Input Existing Booking Data
+                foreach (Booking booking in bookingSystem.ExistingBookings())
+                {
+                    DataRow row = table.NewRow();
+                    row["Ref."] = booking.BookingReference;
+                    row["AdminID"] = booking.UserID;
+                    row["MedlemID"] = booking.MemberID;
+                    row["Titel"] = booking.Title;
+                    row["ISBN"] = booking.ISBN;
+                    row["Datum"] = booking.Date;
+                    row["FörfalloDatum"] = booking.ExpiryDate;
+                    row["Återlämna"] = false;
+                    table.Rows.Add(row);
+                }
+                dataGridViewÅterlämnade.DataSource = table;
+            }
         }
 
         //Löste tidigare detta med eventet "shown" men den slutade fungera
@@ -55,42 +163,71 @@ namespace PresentatationLayerExpApp
         //Nu kallar jag på denna metoden när man trycker på meny-knappen.
         public void RefreshForm()
         {
-            ReturnedOrNotBooks();
-
+            updateTable();
         }
 
-        
         private void dataGridViewÅterlämnade_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
 
-            bokningsNummerTextBox.Text = Convert.ToString(dataGridViewÅterlämnade.Rows[e.RowIndex].Cells[0].Value);
-            medlemsNummerTextBox.Text = Convert.ToString(dataGridViewÅterlämnade.Rows[e.RowIndex].Cells[3].Value);
-            bokTitelTextBox.Text = Convert.ToString(dataGridViewÅterlämnade.Rows[e.RowIndex].Cells[2].Value);
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            ReturnedOrNotBooks();
-        }
-
-
-        //visar alla bokningar eller bara dom som inte är inlämnade.
-        public void ReturnedOrNotBooks()
-        {
-            if(checkBox1.Checked)
+            //Selection
+            if (!checkBox1.Checked)
             {
-                dataGridViewÅterlämnade.DataSource = bs.ExistingBookings();
-                foreach (DataGridViewRow row in dataGridViewÅterlämnade.Rows)
-                {
-                    if ((bool)row.Cells[7].Value) row.DefaultCellStyle.BackColor = Color.LightGray;
-                }
-            } else
-            {
-                dataGridViewÅterlämnade.DataSource = bs.NonReturnedBookings();
-                
+                if (Convert.ToBoolean(table.Rows[e.RowIndex]["Återlämna"]) == false)
+                    table.Rows[e.RowIndex]["Återlämna"] = true;
+                else
+                    table.Rows[e.RowIndex]["Återlämna"] = false;
             }
 
+            //AutoFill
+            bokningsNummerTextBox.Text = "";
+            medlemsNummerTextBox.Text = Convert.ToString(dataGridViewÅterlämnade.Rows[e.RowIndex].Cells[2].Value);
+        }
+
+        private void filterByRef(string bookingRef)
+        {
+            IList<int> indexList = new List<int>();
+            for (int i=0; i < dataGridViewÅterlämnade.Rows.Count; i++)
+            {
+                if (Convert.ToString(dataGridViewÅterlämnade.Rows[i].Cells[0].Value).ToUpper() != bookingRef)
+                    indexList.Add(i);
+            }
+
+            for (int i = indexList.Count-1; i >= 0; i--)
+            {
+                dataGridViewÅterlämnade.Rows.RemoveAt(indexList[i]);
+            }
+        }
+
+        private void filterByMember(string memberId)
+        {
+            IList<int> indexList = new List<int>();
+            for (int i = 0; i < dataGridViewÅterlämnade.Rows.Count; i++)
+            {
+                if (Convert.ToString(dataGridViewÅterlämnade.Rows[i].Cells[2].Value).ToUpper() != memberId)
+                    indexList.Add(i);
+            }
+
+            for (int i = indexList.Count - 1; i >= 0; i--)
+            {
+                dataGridViewÅterlämnade.Rows.RemoveAt(indexList[i]);
+            }
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            updateTable();
+            if (bokningsNummerTextBox.Text.Length > 0)
+            {
+                if (bokningsNummerTextBox.Text.All(c => Char.IsLetterOrDigit(c)))
+                    filterByRef(bokningsNummerTextBox.Text);
+            }
+
+            if (medlemsNummerTextBox.Text.Length > 0)
+            {
+                if (medlemsNummerTextBox.Text.All(c => Char.IsLetterOrDigit(c)))
+                    filterByMember(medlemsNummerTextBox.Text);
+            }
         }
     }
 }

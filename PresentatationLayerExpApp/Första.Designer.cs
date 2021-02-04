@@ -31,14 +31,13 @@ namespace PresentatationLayerExpApp
         {
             this.bokaButton = new System.Windows.Forms.Button();
             this.dataGridViewBöcker = new System.Windows.Forms.DataGridView();
-            this.ISBNTextBox = new System.Windows.Forms.TextBox();
             this.MedlemsNrTextBox = new System.Windows.Forms.TextBox();
-            this.ISBNLabel = new System.Windows.Forms.Label();
             this.LabelMedlemNr = new System.Windows.Forms.Label();
             this.LabelRubrik = new System.Windows.Forms.Label();
             this.MedlemsNrError = new System.Windows.Forms.Label();
-            this.IsbnError = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.bookingErrorMessage = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBöcker)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,9 +48,10 @@ namespace PresentatationLayerExpApp
             this.bokaButton.FlatAppearance.BorderSize = 0;
             this.bokaButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
             this.bokaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bokaButton.Location = new System.Drawing.Point(266, 187);
+            this.bokaButton.Location = new System.Drawing.Point(788, 594);
+            this.bokaButton.Margin = new System.Windows.Forms.Padding(4);
             this.bokaButton.Name = "bokaButton";
-            this.bokaButton.Size = new System.Drawing.Size(96, 33);
+            this.bokaButton.Size = new System.Drawing.Size(128, 41);
             this.bokaButton.TabIndex = 0;
             this.bokaButton.Text = "Boka";
             this.bokaButton.UseVisualStyleBackColor = false;
@@ -60,43 +60,29 @@ namespace PresentatationLayerExpApp
             // dataGridViewBöcker
             // 
             this.dataGridViewBöcker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBöcker.Location = new System.Drawing.Point(387, 73);
+            this.dataGridViewBöcker.Location = new System.Drawing.Point(17, 136);
+            this.dataGridViewBöcker.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewBöcker.Name = "dataGridViewBöcker";
             this.dataGridViewBöcker.RowHeadersVisible = false;
             this.dataGridViewBöcker.RowHeadersWidth = 51;
-            this.dataGridViewBöcker.Size = new System.Drawing.Size(285, 345);
+            this.dataGridViewBöcker.Size = new System.Drawing.Size(560, 455);
             this.dataGridViewBöcker.TabIndex = 1;
-            this.dataGridViewBöcker.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewBöcker_CellClick);
-            // 
-            // ISBNTextBox
-            // 
-            this.ISBNTextBox.Location = new System.Drawing.Point(267, 76);
-            this.ISBNTextBox.Name = "ISBNTextBox";
-            this.ISBNTextBox.Size = new System.Drawing.Size(96, 20);
-            this.ISBNTextBox.TabIndex = 2;
             // 
             // MedlemsNrTextBox
             // 
-            this.MedlemsNrTextBox.Location = new System.Drawing.Point(266, 127);
+            this.MedlemsNrTextBox.Location = new System.Drawing.Point(179, 615);
+            this.MedlemsNrTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.MedlemsNrTextBox.Name = "MedlemsNrTextBox";
-            this.MedlemsNrTextBox.Size = new System.Drawing.Size(96, 20);
+            this.MedlemsNrTextBox.Size = new System.Drawing.Size(127, 22);
             this.MedlemsNrTextBox.TabIndex = 3;
-            // 
-            // ISBNLabel
-            // 
-            this.ISBNLabel.AutoSize = true;
-            this.ISBNLabel.Location = new System.Drawing.Point(168, 76);
-            this.ISBNLabel.Name = "ISBNLabel";
-            this.ISBNLabel.Size = new System.Drawing.Size(38, 13);
-            this.ISBNLabel.TabIndex = 4;
-            this.ISBNLabel.Text = "ISBN: ";
             // 
             // LabelMedlemNr
             // 
             this.LabelMedlemNr.AutoSize = true;
-            this.LabelMedlemNr.Location = new System.Drawing.Point(168, 129);
+            this.LabelMedlemNr.Location = new System.Drawing.Point(14, 618);
+            this.LabelMedlemNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelMedlemNr.Name = "LabelMedlemNr";
-            this.LabelMedlemNr.Size = new System.Drawing.Size(92, 13);
+            this.LabelMedlemNr.Size = new System.Drawing.Size(123, 17);
             this.LabelMedlemNr.TabIndex = 5;
             this.LabelMedlemNr.Text = "Medlemsnummer: ";
             // 
@@ -104,7 +90,8 @@ namespace PresentatationLayerExpApp
             // 
             this.LabelRubrik.AutoSize = true;
             this.LabelRubrik.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LabelRubrik.Location = new System.Drawing.Point(12, 9);
+            this.LabelRubrik.Location = new System.Drawing.Point(11, 9);
+            this.LabelRubrik.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelRubrik.Name = "LabelRubrik";
             this.LabelRubrik.Size = new System.Drawing.Size(242, 31);
             this.LabelRubrik.TabIndex = 6;
@@ -114,50 +101,57 @@ namespace PresentatationLayerExpApp
             // 
             this.MedlemsNrError.AutoSize = true;
             this.MedlemsNrError.ForeColor = System.Drawing.Color.Red;
-            this.MedlemsNrError.Location = new System.Drawing.Point(170, 156);
-            this.MedlemsNrError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.MedlemsNrError.Location = new System.Drawing.Point(14, 635);
             this.MedlemsNrError.Name = "MedlemsNrError";
-            this.MedlemsNrError.Size = new System.Drawing.Size(0, 13);
+            this.MedlemsNrError.Size = new System.Drawing.Size(0, 17);
             this.MedlemsNrError.TabIndex = 7;
-            // 
-            // IsbnError
-            // 
-            this.IsbnError.AutoSize = true;
-            this.IsbnError.ForeColor = System.Drawing.Color.Red;
-            this.IsbnError.Location = new System.Drawing.Point(170, 103);
-            this.IsbnError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.IsbnError.Name = "IsbnError";
-            this.IsbnError.Size = new System.Drawing.Size(0, 13);
-            this.IsbnError.TabIndex = 8;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(387, 50);
+            this.checkBox1.Location = new System.Drawing.Point(414, 95);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(126, 17);
+            this.checkBox1.Size = new System.Drawing.Size(163, 21);
             this.checkBox1.TabIndex = 9;
             this.checkBox1.Text = "Visa utlånade böcker";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(17, 94);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(170, 22);
+            this.dateTimePicker.TabIndex = 10;
+            // 
+            // bookingErrorMessage
+            // 
+            this.bookingErrorMessage.AutoSize = true;
+            this.bookingErrorMessage.ForeColor = System.Drawing.Color.Red;
+            this.bookingErrorMessage.Location = new System.Drawing.Point(14, 595);
+            this.bookingErrorMessage.Name = "bookingErrorMessage";
+            this.bookingErrorMessage.Size = new System.Drawing.Size(12, 17);
+            this.bookingErrorMessage.TabIndex = 11;
+            this.bookingErrorMessage.Text = " ";
+            // 
             // Första
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(784, 537);
+            this.ClientSize = new System.Drawing.Size(1045, 661);
+            this.Controls.Add(this.bookingErrorMessage);
+            this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.IsbnError);
             this.Controls.Add(this.MedlemsNrError);
             this.Controls.Add(this.LabelRubrik);
             this.Controls.Add(this.LabelMedlemNr);
-            this.Controls.Add(this.ISBNLabel);
             this.Controls.Add(this.MedlemsNrTextBox);
-            this.Controls.Add(this.ISBNTextBox);
             this.Controls.Add(this.dataGridViewBöcker);
             this.Controls.Add(this.bokaButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Första";
             this.Text = "       ";
             this.Load += new System.EventHandler(this.Test_Load);
@@ -171,13 +165,12 @@ namespace PresentatationLayerExpApp
 
         private System.Windows.Forms.Button bokaButton;
         private System.Windows.Forms.DataGridView dataGridViewBöcker;
-        private System.Windows.Forms.TextBox ISBNTextBox;
         private System.Windows.Forms.TextBox MedlemsNrTextBox;
-        private System.Windows.Forms.Label ISBNLabel;
         private System.Windows.Forms.Label LabelMedlemNr;
         private System.Windows.Forms.Label LabelRubrik;
         private System.Windows.Forms.Label MedlemsNrError;
-        private System.Windows.Forms.Label IsbnError;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Label bookingErrorMessage;
     }
 }

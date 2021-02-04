@@ -18,10 +18,10 @@ namespace ExpeditApplikation.Model
         public long ISBN { get; private set; }
         public DateTime Date { get; private set; }
         public DateTime ExpiryDate { get; private set; }
+        public DateTime? Returned { get; set; }
+        public double OustandingPayment { get; set; }
 
         //Jag tar inte bort några bokningar, gör dom bara inaktiva.
-        public bool returned { get; set; }
-
 
         internal Booking(string bookingRef, string userId, string title, string memberId, long isbn, DateTime startDate, DateTime expiryDate)
         {
@@ -32,7 +32,8 @@ namespace ExpeditApplikation.Model
             ISBN = isbn;
             Date = startDate;
             ExpiryDate = expiryDate;
-            
+            Returned = null;
+            OustandingPayment = 0;
         }
     }
 }
