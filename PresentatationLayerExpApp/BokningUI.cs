@@ -99,7 +99,7 @@ namespace PresentatationLayerExpApp
                 table.Columns["ISBN"].ReadOnly = true;
                 table.Columns["Titel"].ReadOnly = true;
                 table.Columns["Dagar"].ReadOnly = true;
-                table.Columns["Låna"].ReadOnly = true;
+                table.Columns["Låna"].ReadOnly = false;
             }
             else
                 table.Clear();
@@ -166,7 +166,7 @@ namespace PresentatationLayerExpApp
             if (e.RowIndex < 0) return;
 
             //Selection
-            if (dataGridViewBöcker.Rows[e.RowIndex].Cells[3].Style.BackColor == Color.White)
+            if (dataGridViewBöcker.Rows[e.RowIndex].Cells[3].ReadOnly == false && e.ColumnIndex != 3)
             {
                 if (Convert.ToBoolean(table.Rows[e.RowIndex]["Låna"]) == false)
                     table.Rows[e.RowIndex]["Låna"] = true;
