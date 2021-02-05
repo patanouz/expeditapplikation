@@ -29,7 +29,6 @@ namespace PresentatationLayerExpApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ÅterlämningUI));
             this.LabelRubrikÅterlämna = new System.Windows.Forms.Label();
             this.dataGridViewÅterlämnade = new System.Windows.Forms.DataGridView();
@@ -63,19 +62,11 @@ namespace PresentatationLayerExpApp
             this.dataGridViewÅterlämnade.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewÅterlämnade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewÅterlämnade.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewÅterlämnade.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(59)))));
+            this.dataGridViewÅterlämnade.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.dataGridViewÅterlämnade.Location = new System.Drawing.Point(71, 97);
             this.dataGridViewÅterlämnade.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewÅterlämnade.Name = "dataGridViewÅterlämnade";
             this.dataGridViewÅterlämnade.ReadOnly = true;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewÅterlämnade.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewÅterlämnade.RowHeadersVisible = false;
             this.dataGridViewÅterlämnade.RowHeadersWidth = 51;
             this.dataGridViewÅterlämnade.Size = new System.Drawing.Size(900, 500);
@@ -85,12 +76,12 @@ namespace PresentatationLayerExpApp
             // 
             // återlämnaButton
             // 
-            this.återlämnaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.återlämnaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(114)))), ((int)(((byte)(175)))));
             this.återlämnaButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.återlämnaButton.FlatAppearance.BorderSize = 0;
             this.återlämnaButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.återlämnaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.återlämnaButton.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.återlämnaButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.återlämnaButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.återlämnaButton.Location = new System.Drawing.Point(780, 625);
             this.återlämnaButton.Margin = new System.Windows.Forms.Padding(4);
@@ -190,7 +181,7 @@ namespace PresentatationLayerExpApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(218)))), ((int)(((byte)(200)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(226)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1045, 702);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.SearchButton);

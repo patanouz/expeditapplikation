@@ -38,7 +38,7 @@ namespace PresentatationLayerExpApp
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(240)))), ((int)(((byte)(192)))));
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(114)))), ((int)(((byte)(175)))));
             this.menuStrip1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -47,23 +47,25 @@ namespace PresentatationLayerExpApp
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1044, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(1044, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // förstaToolStripMenuItem
             // 
-            this.förstaToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.förstaToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.förstaToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.förstaToolStripMenuItem.Name = "förstaToolStripMenuItem";
-            this.förstaToolStripMenuItem.Size = new System.Drawing.Size(75, 23);
+            this.förstaToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.förstaToolStripMenuItem.Text = "Bokning";
             this.förstaToolStripMenuItem.Click += new System.EventHandler(this.förstaToolStripMenuItem_Click);
             // 
             // andraToolStripMenuItem
             // 
-            this.andraToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.andraToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.andraToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.andraToolStripMenuItem.Name = "andraToolStripMenuItem";
-            this.andraToolStripMenuItem.Size = new System.Drawing.Size(104, 23);
+            this.andraToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.andraToolStripMenuItem.Text = "Återlämning";
             this.andraToolStripMenuItem.Click += new System.EventHandler(this.andraToolStripMenuItem_Click);
             // 

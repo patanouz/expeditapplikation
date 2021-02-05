@@ -29,7 +29,6 @@ namespace PresentatationLayerExpApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BokningUI));
             this.bokaButton = new System.Windows.Forms.Button();
@@ -49,12 +48,12 @@ namespace PresentatationLayerExpApp
             // 
             // bokaButton
             // 
-            this.bokaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.bokaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(114)))), ((int)(((byte)(175)))));
             this.bokaButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bokaButton.FlatAppearance.BorderSize = 0;
             this.bokaButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
             this.bokaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bokaButton.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.bokaButton.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bokaButton.ForeColor = System.Drawing.Color.White;
             this.bokaButton.Location = new System.Drawing.Point(780, 625);
             this.bokaButton.Margin = new System.Windows.Forms.Padding(4);
@@ -69,28 +68,20 @@ namespace PresentatationLayerExpApp
             // 
             this.dataGridViewBöcker.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewBöcker.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewBöcker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewBöcker.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewBöcker.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBöcker.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dataGridViewBöcker.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(59)))));
+            this.dataGridViewBöcker.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(45)))), ((int)(((byte)(78)))));
             this.dataGridViewBöcker.Location = new System.Drawing.Point(71, 97);
             this.dataGridViewBöcker.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewBöcker.Name = "dataGridViewBöcker";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewBöcker.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewBöcker.RowHeadersVisible = false;
             this.dataGridViewBöcker.RowHeadersWidth = 51;
             this.dataGridViewBöcker.Size = new System.Drawing.Size(900, 500);
@@ -110,6 +101,7 @@ namespace PresentatationLayerExpApp
             // 
             this.LabelMedlemNr.AutoSize = true;
             this.LabelMedlemNr.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelMedlemNr.ForeColor = System.Drawing.Color.Black;
             this.LabelMedlemNr.Location = new System.Drawing.Point(68, 619);
             this.LabelMedlemNr.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelMedlemNr.Name = "LabelMedlemNr";
@@ -122,6 +114,7 @@ namespace PresentatationLayerExpApp
             this.LabelRubrik.AutoSize = true;
             this.LabelRubrik.BackColor = System.Drawing.Color.Transparent;
             this.LabelRubrik.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelRubrik.ForeColor = System.Drawing.Color.Black;
             this.LabelRubrik.Location = new System.Drawing.Point(67, 24);
             this.LabelRubrik.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabelRubrik.Name = "LabelRubrik";
@@ -142,6 +135,7 @@ namespace PresentatationLayerExpApp
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.ForeColor = System.Drawing.Color.Black;
             this.checkBox1.Location = new System.Drawing.Point(806, 67);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
@@ -174,6 +168,7 @@ namespace PresentatationLayerExpApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(294, 71);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -195,7 +190,7 @@ namespace PresentatationLayerExpApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(218)))), ((int)(((byte)(200)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(226)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1045, 702);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);

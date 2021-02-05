@@ -60,11 +60,11 @@ namespace PresentatationLayerExpApp
             // 
             // loggaInButton
             // 
-            this.loggaInButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.loggaInButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(114)))), ((int)(((byte)(175)))));
             this.loggaInButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loggaInButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(83)))), ((int)(((byte)(140)))));
+            this.loggaInButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(114)))), ((int)(((byte)(175)))));
             this.loggaInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.loggaInButton.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.loggaInButton.Font = new System.Drawing.Font("Century Gothic", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.loggaInButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.loggaInButton.Location = new System.Drawing.Point(172, 219);
             this.loggaInButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -81,9 +81,9 @@ namespace PresentatationLayerExpApp
             this.labelAnställning.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAnställning.Location = new System.Drawing.Point(59, 111);
             this.labelAnställning.Name = "labelAnställning";
-            this.labelAnställning.Size = new System.Drawing.Size(105, 17);
+            this.labelAnställning.Size = new System.Drawing.Size(103, 17);
             this.labelAnställning.TabIndex = 3;
-            this.labelAnställning.Text = "AnställningsNr: ";
+            this.labelAnställning.Text = "AnställningsId: ";
             // 
             // labenLösenord
             // 
@@ -118,7 +118,7 @@ namespace PresentatationLayerExpApp
             // 
             this.loginTitle.AutoSize = true;
             this.loginTitle.Font = new System.Drawing.Font("Century Gothic", 16.25F);
-            this.loginTitle.Location = new System.Drawing.Point(57, 33);
+            this.loginTitle.Location = new System.Drawing.Point(130, 32);
             this.loginTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.loginTitle.Name = "loginTitle";
             this.loginTitle.Size = new System.Drawing.Size(126, 25);
@@ -130,7 +130,7 @@ namespace PresentatationLayerExpApp
             this.AcceptButton = this.loggaInButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(218)))), ((int)(((byte)(200)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(226)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(384, 325);
             this.Controls.Add(this.loginTitle);
             this.Controls.Add(this.label2);
