@@ -33,6 +33,7 @@ namespace PresentatationLayerExpApp
 
             dataGridViewÅterlämnade.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dataGridViewÅterlämnade.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewÅterlämnade.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void returnBookButton_Click(object sender, EventArgs e)
@@ -220,13 +221,13 @@ namespace PresentatationLayerExpApp
             if (bokningsNummerTextBox.Text.Length > 0)
             {
                 if (bokningsNummerTextBox.Text.All(c => Char.IsLetterOrDigit(c)))
-                    filterByRef(bokningsNummerTextBox.Text);
+                    filterByRef(bokningsNummerTextBox.Text.ToUpper());
             }
 
             if (medlemsNummerTextBox.Text.Length > 0)
             {
                 if (medlemsNummerTextBox.Text.All(c => Char.IsLetterOrDigit(c)))
-                    filterByMember(medlemsNummerTextBox.Text);
+                    filterByMember(medlemsNummerTextBox.Text.ToUpper());
             }
         }
 
@@ -234,5 +235,7 @@ namespace PresentatationLayerExpApp
         {
             dataGridViewÅterlämnade.ClearSelection();
         }
+
+    
     }
 }

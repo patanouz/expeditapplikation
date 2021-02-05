@@ -44,14 +44,20 @@ namespace ExpeditApplikation.Internals
         private void Fill()
         {
             //User
-            UserRepository.Table.Add(new User("1", "123", "Simon", "admin"));
+            UserRepository.Table.Add(new User("admin", "123", "Simon", "admin"));
 
             //Member
             MemberRepository.Table.Add(new Member("M1", "Simon", "Landenberg", "070-1234567", "s193508@student.hb.se"));
-            MemberRepository.Table.Add(new Member("M2", "Simon", "Landenberg", "070-1234567", "s193508@student.hb.se"));
+            MemberRepository.Table.Add(new Member("M2", "Michael", "Haggren", "070-3434567", "s194508@student.hb.se"));
+            MemberRepository.Table.Add(new Member("M3", "Olle", "Hansson", "070-3344567", "s184508@student.hb.se"));
 
             //Booking
-            //BookingRepository.Table.Add(new Booking("B1", "U1", "C1", 12367978919, DateTime.Now, DateTime.Now));
+
+            /*Lagt till dummydata som med försenade bokningar 
+            så att han kan se att fakturafunktionen fungerar*/
+
+            BookingRepository.Table.Add(new Booking("B100", "admin","Asterix och Obelix", "M3", 99367978919, DateTime.Now.AddDays(-14), DateTime.Now.AddDays(-20)));
+            BookingRepository.Table.Add(new Booking("B101", "admin","Vargen", "M3", 45275432104, DateTime.Now.AddDays(-7), DateTime.Now.AddDays(-14)));
             //BookingRepository.Table.Add(new Booking("B2", "U2", "C2", 12367978919, DateTime.Now, DateTime.Now));
 
 
@@ -75,6 +81,8 @@ namespace ExpeditApplikation.Internals
             BookRepository.Table.Add(new Book(78545432104, "Burn After Writing"));
             BookRepository.Table.Add(new Book(54233456786, "Girl, Woman, Other"));
             BookRepository.Table.Add(new Book(81275432104, "We Were Liars"));
+            BookRepository.Table.Add(new Book(99367978919, "Asterix och Obelix"));
+            BookRepository.Table.Add(new Book(45275432104, "Vargen"));
         }
     }
 }

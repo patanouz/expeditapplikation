@@ -23,7 +23,8 @@ namespace PresentatationLayerExpApp
 
         private void LogginButton_Click(object sender, EventArgs e)
         {
-            if (bookingSystem.LogIn(textBox1.Text, textBox2.Text) == "admin")
+            // Ändrat så userid är "admin" istället för 1
+            if (bookingSystem.LogIn(textBox1.Text.ToLower(), textBox2.Text) == "admin")
             {
                 ControllerUI f = new ControllerUI(bookingSystem);
                 f.Show();
@@ -45,11 +46,11 @@ namespace PresentatationLayerExpApp
         private void FelhanteringInlogg_KeyPress(object sender, KeyPressEventArgs e)
         {
             
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-            (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
+            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            //(e.KeyChar != '.'))
+            //{
+            //    e.Handled = true;
+            //}
         }
 
         private void Login_Load(object sender, EventArgs e)

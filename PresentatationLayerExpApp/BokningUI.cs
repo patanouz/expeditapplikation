@@ -174,5 +174,7 @@ namespace PresentatationLayerExpApp
                     table.Rows[e.RowIndex]["Låna"] = false;
             }
         }
+
+      
     }
 }
