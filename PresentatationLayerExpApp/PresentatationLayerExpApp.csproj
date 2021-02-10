@@ -101,6 +101,7 @@
     <EmbeddedResource Include="BokningUI.resx">
       <DependentUpon>BokningUI.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DCDBookSystem.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

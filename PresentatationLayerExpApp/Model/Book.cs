@@ -19,6 +19,14 @@ namespace ExpeditApplikation.Model
             get; private set;
         }
 
+        internal Internals.Data Data
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         internal Book(long isbn, string title){
             ISBN = isbn;
             Title = title;

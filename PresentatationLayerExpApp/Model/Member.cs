@@ -32,6 +32,15 @@ namespace ExpeditApplikation.Model
         {
             get; private set;
         }
+
+        internal Internals.Data Data
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         internal Member(string id, string firstname, string lastname, string tele, string email)
         {
             MemberID = id;

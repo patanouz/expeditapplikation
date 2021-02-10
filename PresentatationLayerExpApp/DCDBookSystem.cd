@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ExpeditApplikation.Internals.Data">
+    <Position X="6.25" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAIAAAAAAAAAAgCAAAAAAAAACAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Internals\Data.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Repository" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ExpeditApplikation.Internals.Repository&lt;T&gt;">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Internals\Repository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ExpeditApplikation.Model.Book">
+    <Position X="11.25" Y="6.25" Width="1.75" />
+    <AssociationLine Name="Data" Type="ExpeditApplikation.Internals.Data" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.25" Y="6.912" />
+        <Point X="10.875" Y="6.912" />
+        <Point X="10.875" Y="5" />
+        <Point X="8" Y="5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAEAAAAAAAAAAAAAAABAAQAAAAAAAAAA=</HashCode>
+      <FileName>Model\Book.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Data" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ExpeditApplikation.Model.Booking">
+    <Position X="8.25" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAQAACEAAAAAAAAgAAAAAABIBAAAAgAABAAA=</HashCode>
+      <FileName>Model\Booking.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Data" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ExpeditApplikation.Model.Member">
+    <Position X="1.5" Y="5.5" Width="1.5" />
+    <AssociationLine Name="Data" Type="ExpeditApplikation.Internals.Data" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.25" Y="5.5" />
+        <Point X="2.25" Y="4.5" />
+        <Point X="6.25" Y="4.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAAAAAAAEAAAAAAABAAAAAAAAABAAg=</HashCode>
+      <FileName>Model\Member.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Data" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ExpeditApplikation.Model.User">
+    <Position X="4" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAACAAwAAAAAABAAAAAAAgAAAAA=</HashCode>
+      <FileName>Model\User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Data" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ExpeditApplikation.BookingSystem">
+    <Position X="13.75" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQIAAACBBDAIQiAAAAIBAAAAQQAIAAAIA=</HashCode>
+      <FileName>Model\BookingSystem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Data" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

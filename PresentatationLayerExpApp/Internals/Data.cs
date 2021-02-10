@@ -28,6 +28,14 @@ namespace ExpeditApplikation.Internals
             get;
         }
 
+        internal Repository<object> Repository
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         internal Data()
         {
             MemberRepository = new Repository<Member>();

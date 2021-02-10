@@ -190,5 +190,13 @@ namespace ExpeditApplikation
         }
 
         private Internals.Data data;
+
+        internal Data Data
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
