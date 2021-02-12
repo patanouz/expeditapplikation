@@ -198,5 +198,37 @@ namespace ExpeditApplikation
             {
             }
         }
+
+        public Booking Booking
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public User User
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Book Book
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        internal Member Member
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }

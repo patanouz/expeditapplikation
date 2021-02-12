@@ -21,14 +21,6 @@ namespace ExpeditApplikation.Model
         public DateTime? Returned { get; set; }
         public double OustandingPayment { get; set; }
 
-        internal Internals.Data Data
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
         //Jag tar inte bort några bokningar, gör dom bara inaktiva.
 
         internal Booking(string bookingRef, string userId, string title, string memberId, long isbn, DateTime startDate, DateTime expiryDate)
