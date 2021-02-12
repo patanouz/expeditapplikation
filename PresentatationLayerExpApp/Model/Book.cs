@@ -34,34 +34,24 @@ namespace ExpeditApplikation.Model
             Days = days;
         }
 
+        //Vi lägger till aktuella bokningar i boken för att effektivisera processen för att kolla om boken är ledig eller ej.
         public void AddBooking(Booking booking)
         {
-            //Console.WriteLine("Lägger till bokning");
-
-            //Console.WriteLine("Så här många fanns det: " + repo.Count);
-            foreach (var item in repo)
-            {
-                //Console.WriteLine(item.Title);
-            }
             repo.Add(booking);
-            //Console.WriteLine("Så här många finns det nu: " + repo.Count);
         }
 
-        public bool IsAvailable(DateTime start, DateTime end)
+        //Kollar om boken är ledig från ett specifikt startdatum
+        public bool IsAvailable(DateTime start)
         {
-            //TODO: ta bort ifrån listan om den är gammal
-
-            //if(Title == "Hjärnstark") Console.WriteLine("counter " + repo.Count);
-
             foreach (var item in repo)
             {
                 //Kollar om start eller sluttid ligger mellan bokningsperioden
-                if ((start < item.ExpiryDate && item.Date < end) && item.Returned == null)
+                if ((start < item.ExpiryDate && item.Date < start.AddDays(Days)) && item.Returned == null)
                 {
                     return false;
                 }
-
             }
+
             return true;
         }
     }

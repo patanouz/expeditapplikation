@@ -25,8 +25,6 @@ namespace PresentatationLayerExpApp
             dataGridViewBöcker.MultiSelect = false;
             dataGridViewBöcker.AllowUserToAddRows = false;
 
-            //TODO: Ta bort sen.
-            MedlemsNrTextBox.Text = "M1";
         }
 
         private void Test_Load(object sender, EventArgs e)
@@ -123,7 +121,7 @@ namespace PresentatationLayerExpApp
 
                     table.Rows.Add(row);
 
-                    if (!bookingSystem.IsAvailable(book, dateTimePicker.Value))
+                    if (!book.IsAvailable(dateTimePicker.Value))
                     {
                         reColorIndex.Add(table.Rows.Count - 1);
                     }

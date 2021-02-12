@@ -37,3 +37,16 @@ C:\Users\simon\Desktop\Expeditapplikation\PresentatationLayerExpApp\obj\Debug\Pr
 C:\Users\simon\Desktop\Expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.ControllerUI.resources
 C:\Users\simon\Desktop\Expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.LoginUI.resources
 C:\Users\simon\Desktop\Expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.BokningUI.resources
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\bin\Debug\PresentatationLayerExpApp.exe.config
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\bin\Debug\PresentatationLayerExpApp.exe
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\bin\Debug\PresentatationLayerExpApp.pdb
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.csprojAssemblyReference.cache
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.ÅterlämningUI.resources
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.ControllerUI.resources
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.LoginUI.resources
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.Properties.Resources.resources
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.BokningUI.resources
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.csproj.GenerateResource.cache
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.csproj.CoreCompileInputs.cache
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.exe
+C:\Users\norep\Source\Repos\patanouz\expeditapplikation\PresentatationLayerExpApp\obj\Debug\PresentatationLayerExpApp.pdb

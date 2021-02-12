@@ -20,12 +20,12 @@
   <Class Name="ExpeditApplikation.Model.Book">
     <Position X="11" Y="7.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAEAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAEAAAAEAAAAAAAAAIAAAQAAAAIAAAAA=</HashCode>
       <FileName>Model\Book.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ExpeditApplikation.Model.Booking">
-    <Position X="8.5" Y="7.5" Width="1.75" />
+    <Position X="8.75" Y="7.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAQAACEAAAAAAAAgAAAAAAAIBAAAAgAABAAA=</HashCode>
       <FileName>Model\Booking.cs</FileName>
@@ -48,7 +48,7 @@
   <Class Name="ExpeditApplikation.BookingSystem">
     <Position X="6.25" Y="5.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAAAQIABACBBDAIQiAABIIBAAAAQQAIAAAIA=</HashCode>
+      <HashCode>AAABAAAAAAAQIABACBBDgIQiAABIIBAAAAQQAIAAAIA=</HashCode>
       <FileName>Model\BookingSystem.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

@@ -17,6 +17,7 @@ namespace PresentatationLayerExpApp
 
         BookingSystem bookingSystem;
         private DataTable table;
+        int h = 0;
 
         public ÅterlämningUI()
         {
@@ -31,9 +32,9 @@ namespace PresentatationLayerExpApp
         {
             updateTable();
 
-            dataGridViewÅterlämnade.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            dataGridViewÅterlämnade.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewÅterlämnade.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dataGridViewÅterlämnade.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            //dataGridViewÅterlämnade.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dataGridViewÅterlämnade.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void returnBookButton_Click(object sender, EventArgs e)
@@ -51,7 +52,7 @@ namespace PresentatationLayerExpApp
             {
                 if ((bool)row["Återlämna"])
                 {
-                    //TODO behövs nog ej try-catch. Fixar sen.
+
                     try
                     {
                         bookingSystem.ReturnBook(Convert.ToString(row["Ref."]));
@@ -74,6 +75,7 @@ namespace PresentatationLayerExpApp
                 table.Columns.Add("Återlämnad", typeof(DateTime));
                 table.Columns.Add("Faktura", typeof(string));
                 dataGridViewÅterlämnade.Columns["Återlämna"].DisplayIndex = (table.Columns.Count - 1);
+
             }
             else
             {
@@ -81,6 +83,8 @@ namespace PresentatationLayerExpApp
                 table.Columns.Remove("Faktura");
             }
             updateTable();
+
+            
         }
 
         public void updateTable()
@@ -151,6 +155,7 @@ namespace PresentatationLayerExpApp
             }
             else
             {
+                var bookings = bookingSystem.ExistingBookings();
                 //Input Existing Booking Data
                 foreach (Booking booking in bookingSystem.ExistingBookings())
                 {
@@ -164,9 +169,25 @@ namespace PresentatationLayerExpApp
                     row["FörfalloDatum"] = booking.ExpiryDate;
                     row["Återlämna"] = false;
                     table.Rows.Add(row);
+
+                    
+
                 }
                 dataGridViewÅterlämnade.DataSource = table;
+
+                for (int i = 0; i < dataGridViewÅterlämnade.Rows.Count; i++)
+                {
+                    var bookingStatus = bookingSystem.bookingStatus(bookings[i]);
+
+                    if(bookingStatus == "delayed")
+                    {
+                        dataGridViewÅterlämnade.Rows[i].DefaultCellStyle.BackColor = Color.PaleVioletRed;
+                    }
+                }
             }
+
+            dataGridViewÅterlämnade.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            dataGridViewÅterlämnade.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         //Löste tidigare detta med eventet "shown" men den slutade fungera
@@ -191,7 +212,7 @@ namespace PresentatationLayerExpApp
                 }
                 else
                 {
-                    table.Rows[e.RowIndex]["Återlämna"] = false;
+                    dataGridViewÅterlämnade.Rows[e.RowIndex].Cells["Återlämna"].Value = false;
                     dataGridViewÅterlämnade.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
                 }
             }

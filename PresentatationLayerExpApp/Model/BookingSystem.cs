@@ -56,35 +56,17 @@ namespace ExpeditApplikation
             return "false";
         }
 
+        //Returnerar alla lediga böcker.
         public IList<Book> AvailableBooks(DateTime date)
         {           
             List<Book> availableBooks = new List<Book>();
             foreach (Book book in data.BookRepository.Table)
             {
                 availableBooks.Add(book);
-                if (!IsAvailable(book, date))
+                if (!book.IsAvailable(date))
                     availableBooks.Remove(book);
             }
             return availableBooks;
-        }
-
-        public bool IsAvailable(Book book, DateTime date)
-        {
-            //kollar om boken är ledig mellan datum och datum + antal dagar man får lov att låna boken.
-            return book.IsAvailable(date, date.AddDays(book.Days));
-
-
-            //TODO: Byt ut.
-            /*foreach (Booking booking in data.BookingRepository.Table)
-            {
-                if (booking.ISBN == book.ISBN && date >= booking.Date && date <= booking.ExpiryDate)
-                {
-                    if(booking.Returned == null || booking.Returned > date)
-                        return false;
-                }
-            }
-            return true;
-            */
         }
 
         public IList<Book> AllBooks()
@@ -97,6 +79,7 @@ namespace ExpeditApplikation
             return data.BookingRepository.Table;
         }
 
+        //Returnerar alla bokningar som inte är återlämnade.
         public IList<Booking> ExistingBookings()
         {
             IList<Booking> currentBookings = new List<Booking>();
@@ -109,6 +92,7 @@ namespace ExpeditApplikation
             return currentBookings;
         }
 
+        //Kollar status på boken
         public string bookingStatus(Booking booking)
         {
             if (booking.Returned == null)
@@ -183,16 +167,9 @@ namespace ExpeditApplikation
 
         public void AddBooking(string memberId, Book book, DateTime date)
         {
-            //Eftersom FindBook kan returnera null så hanterar jag null som ett fel
-            if (book == null)
-            {
-                return;
-            }
-
+           
             DateTime loanTime = date;
             loanTime = loanTime.AddDays(book.Days);
-
-            //Console.WriteLine("Now: " + date + "\nExpiry: " + loanTime);
 
             Booking booking = new Booking(
                 "B" + Convert.ToString(BookingRefIncrement++),
