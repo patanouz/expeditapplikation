@@ -13,6 +13,8 @@ namespace ExpeditApplikation.Model
          * kändes lättare så än att behöva loopa igenom lista av alla
          * böcker för VARJE bokning.
          */
+        
+        //Test
         public string Title { get; private set; }
         public string MemberID { get; private set; }
         public long ISBN { get; private set; }
