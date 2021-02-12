@@ -52,7 +52,8 @@ namespace ExpeditApplikation.Internals
         private void Fill()
         {
             //User
-            UserRepository.Table.Add(new User("admin", "123", "Simon", "admin"));
+            UserRepository.Table.Add(new User("1", "1", "Simon", "admin")); //TODO: byt tillbaka till admin, 123
+            
 
             //Member
             MemberRepository.Table.Add(new Member("M1", "Simon", "Landenberg", "070-1234567", "s193508@student.hb.se"));
@@ -64,8 +65,8 @@ namespace ExpeditApplikation.Internals
             /*Lagt till dummydata som med försenade bokningar 
             så att han kan se att fakturafunktionen fungerar*/
 
-            BookingRepository.Table.Add(new Booking("B100", "admin","Asterix och Obelix", "M3", 99367978919, DateTime.Now.AddDays(-14), DateTime.Now.AddDays(-20)));
-            BookingRepository.Table.Add(new Booking("B101", "admin","Vargen", "M3", 45275432104, DateTime.Now.AddDays(-7), DateTime.Now.AddDays(-14)));
+            //BookingRepository.Table.Add(new Booking("B100", "admin","Asterix och Obelix", "M3", 99367978919, DateTime.Now.AddDays(-14), DateTime.Now.AddDays(-20)));
+            //BookingRepository.Table.Add(new Booking("B101", "admin","Vargen", "M3", 45275432104, DateTime.Now.AddDays(-7), DateTime.Now.AddDays(-14)));
             //BookingRepository.Table.Add(new Booking("B2", "U2", "C2", 12367978919, DateTime.Now, DateTime.Now));
 
 

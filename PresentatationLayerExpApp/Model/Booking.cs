@@ -8,13 +8,6 @@ namespace ExpeditApplikation.Model
     {
         public string BookingReference { get; private set; }
         public string UserID { get; private set; }
-
-        /* Jag sparar titel här för att kunna se det i bokning
-         * kändes lättare så än att behöva loopa igenom lista av alla
-         * böcker för VARJE bokning.
-         */
-        
-        //Test
         public string Title { get; private set; }
         public string MemberID { get; private set; }
         public long ISBN { get; private set; }
@@ -23,7 +16,6 @@ namespace ExpeditApplikation.Model
         public DateTime? Returned { get; set; }
         public double OustandingPayment { get; set; }
 
-        //Jag tar inte bort några bokningar, gör dom bara inaktiva.
 
         internal Booking(string bookingRef, string userId, string title, string memberId, long isbn, DateTime startDate, DateTime expiryDate)
         {

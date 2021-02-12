@@ -41,6 +41,7 @@ namespace PresentatationLayerExpApp
             this.ErrorMessageLabel = new System.Windows.Forms.Label();
             this.SearchButton = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.ReturnTextBoxError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewÅterlämnade)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -146,7 +147,7 @@ namespace PresentatationLayerExpApp
             // 
             this.ErrorMessageLabel.AutoSize = true;
             this.ErrorMessageLabel.ForeColor = System.Drawing.Color.Red;
-            this.ErrorMessageLabel.Location = new System.Drawing.Point(13, 604);
+            this.ErrorMessageLabel.Location = new System.Drawing.Point(74, 604);
             this.ErrorMessageLabel.Name = "ErrorMessageLabel";
             this.ErrorMessageLabel.Size = new System.Drawing.Size(12, 17);
             this.ErrorMessageLabel.TabIndex = 24;
@@ -177,12 +178,23 @@ namespace PresentatationLayerExpApp
             this.pictureBox2.TabIndex = 29;
             this.pictureBox2.TabStop = false;
             // 
+            // ReturnTextBoxError
+            // 
+            this.ReturnTextBoxError.AutoSize = true;
+            this.ReturnTextBoxError.ForeColor = System.Drawing.Color.Red;
+            this.ReturnTextBoxError.Location = new System.Drawing.Point(653, 601);
+            this.ReturnTextBoxError.Name = "ReturnTextBoxError";
+            this.ReturnTextBoxError.Size = new System.Drawing.Size(12, 17);
+            this.ReturnTextBoxError.TabIndex = 30;
+            this.ReturnTextBoxError.Text = " ";
+            // 
             // ÅterlämningUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(226)))), ((int)(((byte)(239)))));
-            this.ClientSize = new System.Drawing.Size(1045, 702);
+            this.ClientSize = new System.Drawing.Size(1044, 702);
+            this.Controls.Add(this.ReturnTextBoxError);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.SearchButton);
             this.Controls.Add(this.ErrorMessageLabel);
@@ -221,5 +233,6 @@ namespace PresentatationLayerExpApp
         private System.Windows.Forms.Label ErrorMessageLabel;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label ReturnTextBoxError;
     }
 }

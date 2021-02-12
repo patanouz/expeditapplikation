@@ -38,10 +38,20 @@ namespace PresentatationLayerExpApp
 
         private void returnBookButton_Click(object sender, EventArgs e)
         {
+
+            //Ganska lat lösning egentligen, men det får bli så.
+            if (checkBox1.Checked)
+            {
+                ReturnTextBoxError.Text = "Klicka bort checkboxen för utlånade böcker först";
+                return;
+            }
+            ReturnTextBoxError.Text = "";
+
             foreach(DataRow row in table.Rows)
             {
-                if (Convert.ToBoolean(row["Återlämna"]) == true)
+                if ((bool)row["Återlämna"])
                 {
+                    //TODO behövs nog ej try-catch. Fixar sen.
                     try
                     {
                         bookingSystem.ReturnBook(Convert.ToString(row["Ref."]));
@@ -61,15 +71,14 @@ namespace PresentatationLayerExpApp
             //Amending Table Columns
             if (checkBox1.Checked)
             {
-                table.Columns.Remove("Återlämna");
                 table.Columns.Add("Återlämnad", typeof(DateTime));
                 table.Columns.Add("Faktura", typeof(string));
+                dataGridViewÅterlämnade.Columns["Återlämna"].DisplayIndex = (table.Columns.Count - 1);
             }
             else
             {
                 table.Columns.Remove("Återlämnad");
                 table.Columns.Remove("Faktura");
-                table.Columns.Add("Återlämna", typeof(bool));
             }
             updateTable();
         }
@@ -90,6 +99,7 @@ namespace PresentatationLayerExpApp
                 table.Columns.Add("Datum", typeof(DateTime));
                 table.Columns.Add("FörfalloDatum", typeof(DateTime));
                 table.Columns.Add("Återlämna", typeof(bool));
+
 
                 //Read Only
                 table.Columns["Ref."].ReadOnly = true;
@@ -175,10 +185,17 @@ namespace PresentatationLayerExpApp
             if (!checkBox1.Checked)
             {
                 if (Convert.ToBoolean(table.Rows[e.RowIndex]["Återlämna"]) == false)
+                {
                     table.Rows[e.RowIndex]["Återlämna"] = true;
+                    dataGridViewÅterlämnade.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(158, 232, 170);
+                }
                 else
+                {
                     table.Rows[e.RowIndex]["Återlämna"] = false;
+                    dataGridViewÅterlämnade.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                }
             }
+            
 
             //AutoFill
             bokningsNummerTextBox.Text = "";
@@ -236,6 +253,5 @@ namespace PresentatationLayerExpApp
             dataGridViewÅterlämnade.ClearSelection();
         }
 
-    
     }
 }

@@ -70,7 +70,12 @@ namespace ExpeditApplikation
 
         public bool IsAvailable(Book book, DateTime date)
         {
-            foreach (Booking booking in data.BookingRepository.Table)
+            //kollar om boken är ledig mellan datum och datum + antal dagar man får lov att låna boken.
+            return book.IsAvailable(date, date.AddDays(book.Days));
+
+
+            //TODO: Byt ut.
+            /*foreach (Booking booking in data.BookingRepository.Table)
             {
                 if (booking.ISBN == book.ISBN && date >= booking.Date && date <= booking.ExpiryDate)
                 {
@@ -79,6 +84,7 @@ namespace ExpeditApplikation
                 }
             }
             return true;
+            */
         }
 
         public IList<Book> AllBooks()
@@ -166,6 +172,15 @@ namespace ExpeditApplikation
             throw new ArgumentException("Argument does not exist within BookRepository");
         }
 
+        public Book FindBook(long isbn)
+        {
+            foreach (var book in data.BookRepository.Table)
+            {
+                if (book.ISBN == isbn) return book;
+            }
+            return null;
+        }
+
         public void AddBooking(string memberId, Book book, DateTime date)
         {
             //Eftersom FindBook kan returnera null så hanterar jag null som ett fel
@@ -177,8 +192,9 @@ namespace ExpeditApplikation
             DateTime loanTime = date;
             loanTime = loanTime.AddDays(book.Days);
 
-            Console.WriteLine("Now: " + date + "\nExpiry: " + loanTime);
-            data.BookingRepository.Table.Add(new Booking(
+            //Console.WriteLine("Now: " + date + "\nExpiry: " + loanTime);
+
+            Booking booking = new Booking(
                 "B" + Convert.ToString(BookingRefIncrement++),
                 userID,
                 book.Title,
@@ -186,7 +202,9 @@ namespace ExpeditApplikation
                 Convert.ToInt64(book.ISBN),
                 date,
                 loanTime
-           ));
+           );
+            data.BookingRepository.Table.Add(booking);
+            book.AddBooking(booking);
         }
 
         private Internals.Data data;

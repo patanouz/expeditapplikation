@@ -24,6 +24,9 @@ namespace PresentatationLayerExpApp
             dataGridViewBöcker.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewBöcker.MultiSelect = false;
             dataGridViewBöcker.AllowUserToAddRows = false;
+
+            //TODO: Ta bort sen.
+            MedlemsNrTextBox.Text = "M1";
         }
 
         private void Test_Load(object sender, EventArgs e)
@@ -59,7 +62,8 @@ namespace PresentatationLayerExpApp
                 {
                     if (Convert.ToBoolean(row["Låna"]) == true)
                     {
-                        Book book = new Book((long)Convert.ToInt64(row["ISBN"]), Convert.ToString(row["Titel"]));
+                        
+                        Book book = bookingSystem.FindBook((long)Convert.ToInt64(row["ISBN"]));
                         bookingSystem.AddBooking(MedlemsNrTextBox.Text.ToUpper(), book, dateTimePicker.Value);
                         activeBooking = true;
                     }
@@ -169,9 +173,17 @@ namespace PresentatationLayerExpApp
             if (dataGridViewBöcker.Rows[e.RowIndex].Cells[3].ReadOnly == false && e.ColumnIndex != 3)
             {
                 if (Convert.ToBoolean(table.Rows[e.RowIndex]["Låna"]) == false)
+                {
                     table.Rows[e.RowIndex]["Låna"] = true;
+                    dataGridViewBöcker.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.FromArgb(158, 232, 170);
+
+                }
                 else
+                {
                     table.Rows[e.RowIndex]["Låna"] = false;
+                    dataGridViewBöcker.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+
+                }
             }
         }
 

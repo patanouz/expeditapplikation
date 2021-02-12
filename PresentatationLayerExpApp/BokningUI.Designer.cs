@@ -150,7 +150,7 @@ namespace PresentatationLayerExpApp
             this.dateTimePicker.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker.Location = new System.Drawing.Point(71, 67);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(216, 23);
+            this.dateTimePicker.Size = new System.Drawing.Size(227, 23);
             this.dateTimePicker.TabIndex = 10;
             this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
@@ -169,7 +169,7 @@ namespace PresentatationLayerExpApp
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(294, 71);
+            this.label1.Location = new System.Drawing.Point(305, 71);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 16);
@@ -191,7 +191,7 @@ namespace PresentatationLayerExpApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(226)))), ((int)(((byte)(239)))));
-            this.ClientSize = new System.Drawing.Size(1045, 702);
+            this.ClientSize = new System.Drawing.Size(1044, 702);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bookingErrorMessage);
