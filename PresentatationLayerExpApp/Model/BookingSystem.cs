@@ -150,7 +150,7 @@ namespace ExpeditApplikation
                         data.BookingRepository.Table[index].Returned = DateTime.Now;
                         if (booking.ExpiryDate < booking.Returned)
                         {
-                            booking.OustandingPayment = Math.Ceiling((booking.ExpiryDate - DateTime.Now).TotalDays) * 10;
+                            booking.OustandingPayment = Math.Ceiling((DateTime.Now - booking.ExpiryDate).TotalDays) * 10;
                         }
                     }
                     catch (ArgumentException)
