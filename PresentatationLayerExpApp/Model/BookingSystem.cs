@@ -132,6 +132,7 @@ namespace ExpeditApplikation
                 booking.OustandingPayment = Math.Ceiling((DateTime.Now - booking.ExpiryDate).TotalDays) * 10;
             }
         }
+        
         public int FindBooking(string bookingRef)
         {
             for (int i = 0; i < data.BookingRepository.Table.Count; i++)
@@ -141,7 +142,9 @@ namespace ExpeditApplikation
                     return i;
                 }
             }
-            throw new ArgumentException("Argument does not exist within BookRepository");
+
+            //Programmet kommer aldrig returnera -1 men koden kräver ett default-returnvärde ifall for-loopen ej hittar något.
+            return -1;
         }
 
         public Book FindBook(long isbn)
