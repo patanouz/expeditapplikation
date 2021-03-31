@@ -123,8 +123,7 @@ namespace ExpeditApplikation
 
         public void ReturnBook(string bookingId)
         {
-            int index = FindBooking(bookingId);
-            var booking = data.BookingRepository.Table[index];
+            Booking booking = FindBooking(bookingId);
 
             booking.Returned = DateTime.Now;
             if (booking.ExpiryDate < booking.Returned)
@@ -132,16 +131,16 @@ namespace ExpeditApplikation
                 booking.OustandingPayment = Math.Ceiling((DateTime.Now - booking.ExpiryDate).TotalDays) * 10;
             }
         }
-        public int FindBooking(string bookingRef)
+        public Booking FindBooking(string bookingRef)
         {
             for (int i = 0; i < data.BookingRepository.Table.Count; i++)
             {
                 if (data.BookingRepository.Table[i].BookingReference.Equals(bookingRef))
                 {
-                    return i;
+                    return data.BookingRepository.Table[i];
                 }
             }
-            throw new ArgumentException("Argument does not exist within BookRepository");
+            return null;
         }
 
         public Book FindBook(long isbn)
