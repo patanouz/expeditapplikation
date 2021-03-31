@@ -123,8 +123,7 @@ namespace ExpeditApplikation
 
         public void ReturnBook(string bookingId)
         {
-            int index = FindBooking(bookingId);
-            var booking = data.BookingRepository.Table[index];
+            Booking booking = data.BookingRepository.Table[FindBooking(bookingId)];
 
             booking.Returned = DateTime.Now;
             if (booking.ExpiryDate < booking.Returned)
