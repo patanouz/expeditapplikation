@@ -123,25 +123,13 @@ namespace ExpeditApplikation
 
         public void ReturnBook(string bookingId)
         {
-            foreach(Booking booking in data.BookingRepository.Table)
-            {
-                if(booking.BookingReference == bookingId)
-                {
-                    try
-                    {
-                        int index = FindBooking(bookingId);
+            int index = FindBooking(bookingId);
+            var booking = data.BookingRepository.Table[index];
 
-                        data.BookingRepository.Table[index].Returned = DateTime.Now;
-                        if (booking.ExpiryDate < booking.Returned)
-                        {
-                            booking.OustandingPayment = Math.Ceiling((DateTime.Now - booking.ExpiryDate).TotalDays) * 10;
-                        }
-                    }
-                    catch (ArgumentException)
-                    {
-                        throw new ArgumentException("Argument does not exist within BookRepository");
-                    }
-                }
+            booking.Returned = DateTime.Now;
+            if (booking.ExpiryDate < booking.Returned)
+            {
+                booking.OustandingPayment = Math.Ceiling((DateTime.Now - booking.ExpiryDate).TotalDays) * 10;
             }
         }
         public int FindBooking(string bookingRef)
